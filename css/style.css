@@ -177,6 +177,25 @@ strong{ color:var(--ink); font-weight:700; }
 .ridge-mid{ fill:rgba(248,243,232,.08); }
 .ridge-front{ fill:rgba(19,59,34,.65); }
 .ridge-line{ stroke:var(--gold-light); stroke-width:2.5; opacity:.55; }
+.ridge-line{ stroke-dasharray: 14 10; animation: ridge-flow 6s linear infinite; }
+@keyframes ridge-flow{ to{ stroke-dashoffset:-240; } }
+
+.mist{ position:absolute; border-radius:50%; filter:blur(40px); pointer-events:none; background:radial-gradient(circle, rgba(248,243,232,.22), transparent 70%); }
+.mist-a{ width:420px; height:420px; top:-80px; left:-60px; animation:mist-drift-a 22s ease-in-out infinite; }
+.mist-b{ width:340px; height:340px; top:90px; right:-100px; animation:mist-drift-b 26s ease-in-out infinite; }
+.mist-c{ width:260px; height:260px; bottom:40px; left:42%; animation:mist-drift-c 18s ease-in-out infinite; }
+@keyframes mist-drift-a{ 0%,100%{ transform:translate(0,0); } 50%{ transform:translate(60px,40px); } }
+@keyframes mist-drift-b{ 0%,100%{ transform:translate(0,0); } 50%{ transform:translate(-50px,30px); } }
+@keyframes mist-drift-c{ 0%,100%{ transform:translate(0,0) scale(1); } 50%{ transform:translate(30px,-25px) scale(1.15); } }
+
+.hero-anim .eyebrow, .hero-anim h1, .hero-anim .hero-sub, .hero-anim .hero-cta{
+  opacity:0; transform:translateY(24px); animation: hero-rise .8s var(--ease) forwards;
+}
+.hero-anim .eyebrow{ animation-delay:.15s; }
+.hero-anim h1{ animation-delay:.32s; }
+.hero-anim .hero-sub{ animation-delay:.52s; }
+.hero-anim .hero-cta{ animation-delay:.7s; }
+@keyframes hero-rise{ to{ opacity:1; transform:translateY(0); } }
 
 .hero-inner{ position:relative; z-index:1; padding:60px 0 120px; }
 .hero-copy{ max-width:640px; }
@@ -443,6 +462,31 @@ strong{ color:var(--ink); font-weight:700; }
 }
 .back-top.is-visible{ opacity:1; transform:translateY(0); pointer-events:auto; }
 .back-top:hover{ background:var(--gold); color:#231405; }
+.whatsapp-float{
+  position:fixed; left:24px; bottom:24px; z-index:150;
+  width:58px; height:58px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 12px 28px -8px rgba(37,211,102,.6);
+  transition:transform .25s var(--ease);
+  animation: wa-appear .6s var(--ease) .6s both;
+}
+.whatsapp-float:hover{ transform:scale(1.08); }
+.whatsapp-float .icon{ width:30px; height:30px; position:relative; z-index:1; }
+.wa-ping{ position:absolute; inset:0; border-radius:50%; background:#25D366; animation: wa-ping 2.2s ease-out infinite; }
+@keyframes wa-ping{ 0%{ transform:scale(1); opacity:.55; } 100%{ transform:scale(1.9); opacity:0; } }
+@keyframes wa-appear{ from{ opacity:0; transform:translateY(20px) scale(.7); } to{ opacity:1; transform:translateY(0) scale(1); } }
+.wa-tooltip{
+  position:absolute; left:68px; bottom:50%; transform:translateY(50%);
+  background:var(--ink); color:var(--cream); font-size:.82rem; font-weight:600;
+  padding:8px 14px; border-radius:8px; white-space:nowrap; opacity:0; pointer-events:none;
+  transition:opacity .25s var(--ease), transform .25s var(--ease);
+}
+.whatsapp-float:hover .wa-tooltip{ opacity:1; transform:translateY(50%) translateX(4px); }
+@media (max-width:680px){
+  .whatsapp-float{ left:16px; bottom:16px; width:52px; height:52px; }
+  .whatsapp-float .icon{ width:26px; height:26px; }
+  .wa-tooltip{ display:none; }
+}
 
 /* ===================== SCROLL REVEAL ===================== */
 .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
