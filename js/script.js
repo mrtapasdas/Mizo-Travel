@@ -212,7 +212,27 @@
       }
     });
   });
-
+/* ---------- Hero parallax ---------- */
+var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var heroEl = document.querySelector('.hero');
+var ridgeBack = document.querySelector('.ridge-back');
+var ridgeMid = document.querySelector('.ridge-mid');
+var ridgeFront = document.querySelector('.ridge-front');
+if (heroEl && ridgeBack && ridgeMid && ridgeFront && !prefersReducedMotion){
+  var parallaxTicking = false;
+  function updateParallax(){
+    var rect = heroEl.getBoundingClientRect();
+    var progress = Math.min(Math.max(-rect.top / rect.height, 0), 1);
+    ridgeBack.style.transform  = 'translateY(' + (progress * 18) + 'px)';
+    ridgeMid.style.transform   = 'translateY(' + (progress * 36) + 'px)';
+    ridgeFront.style.transform = 'translateY(' + (progress * 58) + 'px)';
+    parallaxTicking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!parallaxTicking){ requestAnimationFrame(updateParallax); parallaxTicking = true; }
+  }, { passive:true });
+  updateParallax();
+}
   /* ---------- Footer year ---------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
