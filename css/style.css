@@ -428,6 +428,42 @@ strong{ color:var(--ink); font-weight:700; }
 .contact-info p{ display:flex; align-items:flex-start; gap:.7em; font-size:.95rem; color:var(--ink-soft); }
 .contact-info .icon{ color:var(--forest); margin-top:2px; }
 
+/* ===================== WHATSAPP CONTACT FORM ===================== */
+.field-label{
+  display:block; font-size:.84rem; font-weight:700; color:var(--ink); margin-bottom:6px;
+}
+.field-optional{ font-size:.78rem; font-weight:500; color:var(--ink-soft); }
+
+.toggle-group{
+  display:inline-flex; background:var(--cream-deep); border:1.5px solid var(--line);
+  border-radius:999px; padding:4px; gap:4px;
+}
+.toggle-opt{ display:flex; }
+.toggle-opt input[type="radio"]{ position:absolute; opacity:0; width:0; height:0; pointer-events:none; }
+.toggle-opt span{
+  display:flex; align-items:center; gap:.4em; padding:9px 22px; border-radius:999px;
+  font-size:.9rem; font-weight:600; color:var(--ink-soft); cursor:pointer; user-select:none;
+  transition:background .22s var(--ease), color .22s var(--ease), box-shadow .22s var(--ease);
+  white-space:nowrap;
+}
+.toggle-opt input[type="radio"]:checked + span{
+  background:var(--cream-soft); color:var(--forest);
+  box-shadow:0 2px 10px rgba(30,86,49,.18);
+}
+.toggle-opt input[type="radio"]:focus-visible + span{
+  outline:2.5px solid var(--gold-deep); outline-offset:2px; border-radius:999px;
+}
+.toggle-opt span:hover{ color:var(--forest); }
+
+.btn-wa{
+  background:#25D366; color:#fff; width:100%;
+  box-shadow:0 10px 24px -8px rgba(37,211,102,.45); font-size:1rem;
+}
+.btn-wa:hover{ background:#1faf55; transform:translateY(-2px); box-shadow:0 14px 28px -8px rgba(37,211,102,.55); }
+.btn-wa .icon{ width:1.3em; height:1.3em; }
+
+.form-note{ font-size:.8rem; color:var(--ink-soft); margin-top:10px; line-height:1.5; }
+
 /* ===================== FOOTER ===================== */
 .site-footer{ background:var(--forest-dark); color:rgba(248,243,232,.85); padding-top:70px; }
 .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.3fr; gap:40px; padding-bottom:50px; border-bottom:1px solid rgba(248,243,232,.12); }
