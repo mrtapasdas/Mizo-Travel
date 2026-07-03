@@ -174,30 +174,65 @@
     window.scrollTo({ top:0, behavior:'smooth' });
   });
 
-  /* ---------- Contact form validation (client-side demo) ---------- */
-  var contactForm = document.getElementById('contact-form');
-  if (contactForm){
-    var statusEl = document.getElementById('form-status');
-    contactForm.addEventListener('submit', function(e){
-      e.preventDefault();
-      var valid = true;
-      contactForm.querySelectorAll('[required]').forEach(function(input){
-        var field = input.closest('.field');
-        var ok = input.value.trim().length > 1 && (input.type !== 'email' || /^\S+@\S+\.\S+$/.test(input.value));
-        if (field) field.classList.toggle('is-invalid', !ok);
-        if (!ok) valid = false;
-      });
-      if (valid){
-        statusEl.textContent = 'Thanks — your enquiry is on its way. We reply within a day.';
-        statusEl.classList.add('is-success');
-        contactForm.reset();
-      } else {
-        statusEl.textContent = 'Please fill in the highlighted fields.';
-        statusEl.classList.remove('is-success');
-      }
-    });
-  }
+ /* ---------- WhatsApp contact form ---------- */
+var waForm = document.getElementById('wa-form');
+if (waForm){
+  waForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name    = document.getElementById('wa-name').value.trim();
+    var contact = document.getElementById('wa-contact').value.trim();
+    var people  = document.getElementById('wa-people').value.trim();
+    var date    = document.getElementById('wa-date').value;
+    var accom   = (waForm.querySelector('[name="accommodation"]:checked') || {}).value || '';
+    var transp  = (waForm.querySelector('[name="transport"]:checked') || {}).value || '';
+    var message = document.getElementById('wa-message').value.trim();
 
+    var checks = [
+      { el: document.getElementById('wa-name'),    ok: name.length > 1 },
+      { el: document.getElementById('wa-contact'), ok: contact.length > 5 },
+      { el: document.getElementById('wa-people'),  ok: people !== '' && parseInt(people, 10) > 0 },
+      { el: document.getElementById('wa-date'),    ok: date.length > 0 }
+    ];
+    var valid = true;
+    checks.forEach(function(c){
+      var field = c.el.closest('.field');
+      if (field) field.classList.toggle('is-invalid', !c.ok);
+      if (!c.ok) valid = false;
+    });
+    if (!valid) return;
+
+    var dateStr = date;
+    try {
+      var d = new Date(date + 'T00:00:00');
+      dateStr = d.toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' });
+    } catch(_){}
+
+    var lines = [
+      'Hi Mizo Travel! 👋', '',
+      '*Name:* ' + name,
+      '*Contact:* ' + contact,
+      '*No. of People:* ' + people,
+      '*Travel Date:* ' + dateStr,
+      '*Accommodation:* ' + accom,
+      '*Transport:* ' + transp
+    ];
+    if (message) lines.push('*Message:* ' + message);
+
+    /* ⚠️ Replace 913890000000 with your real WhatsApp number (country code + number, no + or spaces) */
+    var waNumber = '919531671758';
+    window.open(
+      'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(lines.join('\n')),
+      '_blank', 'noopener,noreferrer'
+    );
+  });
+
+  waForm.querySelectorAll('input, textarea').forEach(function(input){
+    input.addEventListener('input', function(){
+      var field = input.closest('.field');
+      if (field) field.classList.remove('is-invalid');
+    });
+  });
+}
   /* ---------- Newsletter forms (demo) ---------- */
   ['newsletter-form','footer-newsletter-form'].forEach(function(id){
     var form = document.getElementById(id);
