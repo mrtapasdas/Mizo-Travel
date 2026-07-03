@@ -611,45 +611,76 @@
   <section class="section contact" id="contact">
     <div class="wrap contact-grid">
       <div class="reveal">
-        <p class="eyebrow">Get in touch</p>
-        <h2>Tell us roughly what you want — we'll shape the rest.</h2>
-        <p class="section-sub">No call centre, no auto-replies. A real person on our Aizawl team reads this form.</p>
+  <p class="eyebrow">Plan via WhatsApp</p>
+  <h2>Fill in the details — we'll take it from there on WhatsApp.</h2>
+  <p class="section-sub">Hit send and WhatsApp opens with everything pre-filled. Our Aizawl team replies within a few hours.</p>
 
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-row">
-            <div class="field">
-              <label for="cf-name">Full name</label>
-              <input type="text" id="cf-name" name="name" required>
-              <span class="field-error">Please enter your name.</span>
-            </div>
-            <div class="field">
-              <label for="cf-email">Email</label>
-              <input type="email" id="cf-email" name="email" required>
-              <span class="field-error">Please enter a valid email.</span>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="field">
-              <label for="cf-dates">Travel dates (approx.)</label>
-              <input type="text" id="cf-dates" name="dates" placeholder="e.g. early March 2027">
-            </div>
-            <div class="field">
-              <label for="cf-people">Group size</label>
-              <input type="number" id="cf-people" name="people" min="1" placeholder="2">
-            </div>
-          </div>
-          <div class="field">
-            <label for="cf-message">What are you hoping to do?</label>
-            <textarea id="cf-message" name="message" rows="4" required></textarea>
-            <span class="field-error">Tell us a little about your trip.</span>
-          </div>
-          <button type="submit" class="btn btn-gold btn-lg">
-            Send Enquiry <svg class="icon icon-sm"><use href="#ic-arrow-up" style="transform:rotate(45deg)"/></svg>
-          </button>
-          <p class="form-status" id="form-status" role="status"></p>
-        </form>
+  <form class="contact-form" id="wa-form" novalidate>
+    <div class="form-row">
+      <div class="field">
+        <label for="wa-name">Full Name</label>
+        <input type="text" id="wa-name" name="name" placeholder="Your name" required>
+        <span class="field-error">Please enter your name.</span>
       </div>
+      <div class="field">
+        <label for="wa-contact">Contact No.</label>
+        <input type="tel" id="wa-contact" name="contact" placeholder="+91 98765 43210" required>
+        <span class="field-error">Please enter your contact number.</span>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="wa-people">No. of People</label>
+        <input type="number" id="wa-people" name="people" min="1" max="50" placeholder="2" required>
+        <span class="field-error">Please enter group size.</span>
+      </div>
+      <div class="field">
+        <label for="wa-date">Travel Date</label>
+        <input type="date" id="wa-date" name="date" required>
+        <span class="field-error">Please pick a travel date.</span>
+      </div>
+    </div>
 
+    <div class="field">
+      <span class="field-label">Accommodation</span>
+      <div class="toggle-group" role="radiogroup" aria-label="Accommodation type">
+        <label class="toggle-opt">
+          <input type="radio" name="accommodation" value="Hotel" checked>
+          <span>🏨 Hotel</span>
+        </label>
+        <label class="toggle-opt">
+          <input type="radio" name="accommodation" value="Homestay">
+          <span>🏡 Homestay</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="field">
+      <span class="field-label">Transport</span>
+      <div class="toggle-group" role="radiogroup" aria-label="Transport preference">
+        <label class="toggle-opt">
+          <input type="radio" name="transport" value="Scooty" checked>
+          <span>🛵 Scooty</span>
+        </label>
+        <label class="toggle-opt">
+          <input type="radio" name="transport" value="Private Car">
+          <span>🚗 Private Car</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="wa-message">Message <span class="field-optional">(optional)</span></label>
+      <textarea id="wa-message" name="message" rows="3" placeholder="Tell us about your dream Mizoram trip…"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-wa btn-lg">
+      <svg class="icon icon-sm" aria-hidden="true"><use href="#ic-whatsapp"/></svg>
+      Send via WhatsApp
+    </button>
+    <p class="form-note">Tapping the button opens WhatsApp with your details ready to send. No WhatsApp? Email us at hello@mizotravel.example</p>
+  </form>
+</div>
       <div class="contact-side reveal">
         <svg class="map-art" viewBox="0 0 360 420" aria-label="Stylised map of Mizoram with Aizawl marked" role="img">
           <path class="map-shape" d="M60 40 L160 20 L260 60 L320 140 L300 230 L330 320 L250 400 L150 380 L90 300 L40 220 L70 140 Z"/>
