@@ -569,3 +569,11 @@ strong{ color:var(--ink); font-weight:700; }
   .culture-grid{ padding:60px 18px; }
   .back-top{ right:16px; bottom:16px; width:44px; height:44px; }
 }
+
+.nl-feedback{ font-size:.84rem; font-weight:600; min-height:1.3em; margin-top:10px; display:block; }
+.nl-success{ color:var(--forest); }
+.nl-error{ color:var(--maroon); }
+.fnl-feedback.nl-success{ color:var(--gold-light); }
+.fnl-feedback.nl-error{ color:#f4a4b2; }
+.newsletter .nl-success{ color:var(--forest-dark); }
+.newsletter .nl-error{ color:var(--maroon-dark); }
