@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ============================================================
+       Mizo Travel — XML Sitemap
+       Single-page application: all sections live on the root URL.
+       Hash-fragment anchors are listed as <loc> notes only;
+       Google indexes only the canonical root page.
+       Last updated: 2026-07-04
+       ============================================================ -->
+
+  <!-- ── Homepage (canonical, highest priority) ── -->
+  <url>
+    <loc>https://www.mizotravel.com/</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.mizotravel.com/assets/logo.jpg</image:loc>
+      <image:title>Mizo Travel — Explore the Lush Hills of Northeast India</image:title>
+      <image:caption>Mizo Travel logo: twin green hills over a gold horizon arc, with Puan-inspired detail</image:caption>
+      <image:geo_location>Aizawl, Mizoram, India</image:geo_location>
+      <image:license>https://www.mizotravel.com/</image:license>
+    </image:image>
+  </url>
+
+  <!-- ── 404 error page (noindex in meta, listed here for completeness) ── -->
+  <url>
+    <loc>https://www.mizotravel.com/404.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+
+</urlset>
