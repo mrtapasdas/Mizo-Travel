@@ -183,15 +183,22 @@ if (waForm){
     var contact = document.getElementById('wa-contact').value.trim();
     var people  = document.getElementById('wa-people').value.trim();
     var date    = document.getElementById('wa-date').value;
+    var days    = document.getElementById('wa-days').value.trim();
+    var nights  = document.getElementById('wa-nights').value.trim();
     var accom   = (waForm.querySelector('[name="accommodation"]:checked') || {}).value || '';
     var transp  = (waForm.querySelector('[name="transport"]:checked') || {}).value || '';
+    var meal    = (waForm.querySelector('[name="meal"]:checked') || {}).value || '';
+    var pickup  = (waForm.querySelector('[name="pickup"]:checked') || {}).value || '';
+    var permit  = (waForm.querySelector('[name="permit"]:checked') || {}).value || '';
     var message = document.getElementById('wa-message').value.trim();
 
+    /* Validate required fields */
     var checks = [
       { el: document.getElementById('wa-name'),    ok: name.length > 1 },
       { el: document.getElementById('wa-contact'), ok: contact.length > 5 },
       { el: document.getElementById('wa-people'),  ok: people !== '' && parseInt(people, 10) > 0 },
-      { el: document.getElementById('wa-date'),    ok: date.length > 0 }
+      { el: document.getElementById('wa-date'),    ok: date.length > 0 },
+      { el: document.getElementById('wa-days'),    ok: days !== '' && parseInt(days, 10) > 0 }
     ];
     var valid = true;
     checks.forEach(function(c){
@@ -201,24 +208,34 @@ if (waForm){
     });
     if (!valid) return;
 
+    /* Format date nicely */
     var dateStr = date;
     try {
       var d = new Date(date + 'T00:00:00');
       dateStr = d.toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' });
     } catch(_){}
 
+    /* Build duration string */
+    var duration = days + ' Day' + (parseInt(days, 10) !== 1 ? 's' : '');
+    if (nights !== '') duration += ' / ' + nights + ' Night' + (parseInt(nights, 10) !== 1 ? 's' : '');
+
+    /* Build WhatsApp message */
     var lines = [
       'Hi Mizo Travel! 👋', '',
-      '*Name:* ' + name,
-      '*Contact:* ' + contact,
-      '*No. of People:* ' + people,
-      '*Travel Date:* ' + dateStr,
-      '*Accommodation:* ' + accom,
-      '*Transport:* ' + transp
+      '*Name:* '            + name,
+      '*Contact:* '         + contact,
+      '*No. of People:* '   + people,
+      '*Travel Date:* '     + dateStr,
+      '*Duration:* '        + duration,
+      '*Accommodation:* '   + accom,
+      '*Transport:* '       + transp,
+      '*Meal Preference:* ' + meal,
+      '*Pickup & Drop:* '   + pickup,
+      '*Permit (ILP):* '    + permit
     ];
     if (message) lines.push('*Message:* ' + message);
 
-    /* ⚠️ Replace 913890000000 with your real WhatsApp number (country code + number, no + or spaces) */
+    /* ⚠️ Replace 913890000000 with your real WhatsApp number */
     var waNumber = '919531671758';
     window.open(
       'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(lines.join('\n')),
@@ -226,6 +243,7 @@ if (waForm){
     );
   });
 
+  /* Clear invalid state on input */
   waForm.querySelectorAll('input, textarea').forEach(function(input){
     input.addEventListener('input', function(){
       var field = input.closest('.field');
