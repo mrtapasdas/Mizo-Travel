@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Mizo Travel</title>
+<meta name="description" content="Looks like this trail doesn't exist. Head back to Mizo Travel and explore Mizoram's lush hills with our local guides.">
+<meta name="robots" content="noindex, follow">
+<meta name="author" content="Mizo Travel">
+<link rel="canonical" href="https://www.mizotravel.com/404.html">
+<meta name="theme-color" content="#1E5631">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Page Not Found — Mizo Travel">
+<meta property="og:description" content="This trail doesn't exist. Head back and explore Mizoram.">
+<meta property="og:image" content="assets/logo.jpg">
+<meta property="og:url" content="https://www.mizotravel.com/404.html">
+
+<link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+<link rel="apple-touch-icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* ── 404-specific overrides ── */
+  .site-header{ background:rgba(248,243,232,.96); backdrop-filter:blur(10px); box-shadow:0 2px 10px rgba(33,30,25,.07); }
+  .site-header .brand-text,
+  .site-header .main-nav a{ color:var(--ink); }
+  .site-header .nav-toggle{ color:var(--ink); }
+  .site-header .main-nav a::after{ background:var(--gold); }
+
+  .page-404{
+    min-height:calc(100vh - 72px);
+    display:flex; align-items:center; justify-content:center;
+    padding:120px 24px 80px;
+    background:radial-gradient(120% 100% at 60% 0%, var(--forest-light) 0%, var(--forest) 45%, var(--forest-dark) 100%);
+    position:relative; overflow:hidden;
+  }
+
+  /* Decorative ridge behind content */
+  .e404-ridge{
+    position:absolute; bottom:-2px; left:0; width:100%; height:50%; z-index:0;
+  }
+  .e404-ridge .ridge{ opacity:.9; }
+  .e404-ridge .ridge-back{ fill:rgba(248,243,232,.04); }
+  .e404-ridge .ridge-mid{ fill:rgba(248,243,232,.07); }
+  .e404-ridge .ridge-front{ fill:rgba(19,59,34,.6); }
+
+  .e404-inner{
+    position:relative; z-index:1; text-align:center; max-width:600px;
+  }
+
+  .e404-num{
+    font-family:var(--font-display); font-size:clamp(7rem, 5rem + 10vw, 13rem);
+    font-weight:600; line-height:1; color:transparent;
+    -webkit-text-stroke:2px rgba(248,243,232,.35);
+    letter-spacing:-0.04em; margin-bottom:4px;
+    animation:hero-rise .7s var(--ease) .1s both;
+  }
+
+  /* Compass SVG illustration */
+  .e404-compass{
+    width:clamp(80px,12vw,110px); height:clamp(80px,12vw,110px);
+    margin:0 auto 20px; opacity:.85;
+    animation:hero-rise .7s var(--ease) .2s both;
+  }
+
+  .e404-eyebrow{
+    font-family:var(--font-body); font-weight:700; font-size:.78rem;
+    letter-spacing:.14em; text-transform:uppercase;
+    color:var(--gold-light); margin-bottom:16px;
+    display:flex; align-items:center; justify-content:center; gap:.6em;
+    animation:hero-rise .7s var(--ease) .25s both;
+  }
+  .e404-eyebrow::before,.e404-eyebrow::after{
+    content:""; width:22px; height:2px; background:var(--gold-light); display:inline-block;
+  }
+
+  .e404-inner h1{
+    color:var(--cream); font-size:clamp(1.8rem,1.3rem + 2.5vw,2.8rem);
+    margin-bottom:18px; font-weight:500;
+    animation:hero-rise .7s var(--ease) .35s both;
+  }
+  .e404-inner h1 em{ color:var(--gold-light); font-style:italic; }
+
+  .e404-inner p{
+    color:rgba(248,243,232,.78); font-size:1.05rem; max-width:460px; margin:0 auto 36px;
+    animation:hero-rise .7s var(--ease) .48s both;
+  }
+
+  .e404-actions{
+    display:flex; flex-wrap:wrap; gap:14px; justify-content:center;
+    animation:hero-rise .7s var(--ease) .6s both;
+  }
+
+  .e404-links{
+    display:flex; flex-wrap:wrap; gap:18px; justify-content:center;
+    margin-top:28px;
+    animation:hero-rise .7s var(--ease) .72s both;
+  }
+  .e404-links a{
+    font-size:.88rem; font-weight:600; color:rgba(248,243,232,.65);
+    border-bottom:1px solid rgba(248,243,232,.25); padding-bottom:2px;
+    transition:color .2s var(--ease), border-color .2s var(--ease);
+  }
+  .e404-links a:hover{ color:var(--gold-light); border-color:var(--gold-light); }
+
+  /* Puan strip at bottom */
+  .e404-puan{
+    position:absolute; bottom:0; left:0; right:0; height:18px;
+    background-image:repeating-linear-gradient(135deg, var(--gold) 0 9px, var(--maroon) 9px 18px);
+    z-index:1;
+  }
+
+  /* Footer on 404 always has dark bg */
+  .site-footer{ margin-top:0; }
+
+  @media (max-width:680px){
+    .e404-num{ -webkit-text-stroke:1.5px rgba(248,243,232,.3); }
+    .e404-actions{ flex-direction:column; align-items:center; }
+    .e404-actions .btn{ width:100%; max-width:280px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ ICON SPRITE (minimal set needed) ============ -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="ic-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="ic-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M15 9l-2 6-6 2 2-6 6-2z" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-chev-r" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-whatsapp" viewBox="0 0 32 32">
+    <path d="M16 4C9.4 4 4 9.4 4 16c0 2.4.7 4.7 2 6.6L4.4 28l5.6-1.5c1.8 1 3.8 1.5 6 1.5 6.6 0 12-5.4 12-12S22.6 4 16 4z" fill="#25D366"/>
+    <path d="M22.4 19c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-1.7-.8-2.8-1.5-3.9-3.3-.3-.5.3-.5.8-1.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1.1-1.1 2.6 0 1.5 1.1 3 1.3 3.2.2.2 2.1 3.3 5.2 4.5 2.6 1 3.1.8 3.7.7.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4z" fill="#fff"/>
+  </symbol>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner wrap">
+    <a href="./" class="brand" aria-label="Mizo Travel — home">
+      <img src="assets/logo.jpg" alt="Mizo Travel logo" width="44" height="44">
+      <span class="brand-text">Mizo<em>Travel</em></span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="./#destinations">Destinations</a></li>
+        <li><a href="./#experiences">Experiences</a></li>
+        <li><a href="./#packages">Tour Packages</a></li>
+        <li><a href="./#culture">Culture</a></li>
+        <li><a href="./#about">About</a></li>
+        <li><a href="./#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="./#contact" class="btn btn-gold btn-sm">Plan Your Trip</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="icon"><use href="#ic-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-head">
+    <span class="brand-text">Mizo<em>Travel</em></span>
+    <button class="nav-toggle" id="nav-close" aria-label="Close menu">
+      <svg class="icon"><use href="#ic-close"/></svg>
+    </button>
+  </div>
+  <ul>
+    <li><a href="./#destinations">Destinations</a></li>
+    <li><a href="./#experiences">Experiences</a></li>
+    <li><a href="./#packages">Tour Packages</a></li>
+    <li><a href="./#culture">Culture</a></li>
+    <li><a href="./#about">About</a></li>
+    <li><a href="./#faq">FAQ</a></li>
+    <li><a href="./#contact">Contact Us</a></li>
+  </ul>
+</div>
+<div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
+
+<!-- ============ 404 SECTION ============ -->
+<main id="main">
+  <section class="page-404" aria-labelledby="e404-heading">
+
+    <!-- Ridge background -->
+    <svg class="e404-ridge" viewBox="0 0 1600 400" preserveAspectRatio="none" aria-hidden="true">
+      <path class="ridge ridge-back" d="M0 280 L200 180 L380 260 L580 120 L780 240 L1000 140 L1200 260 L1400 160 L1600 240 L1600 400 L0 400 Z"/>
+      <path class="ridge ridge-mid" d="M0 320 L240 240 L440 300 L660 180 L900 290 L1100 200 L1340 300 L1600 230 L1600 400 L0 400 Z"/>
+      <path class="ridge ridge-front" d="M0 360 L280 300 L500 350 L780 270 L1060 340 L1320 270 L1600 340 L1600 400 L0 400 Z"/>
+    </svg>
+
+    <div class="e404-inner">
+      <!-- Compass illustration -->
+      <svg class="e404-compass" viewBox="0 0 110 110" fill="none" aria-hidden="true">
+        <circle cx="55" cy="55" r="50" stroke="rgba(248,243,232,0.25)" stroke-width="2"/>
+        <circle cx="55" cy="55" r="42" stroke="rgba(248,243,232,0.15)" stroke-width="1"/>
+        <circle cx="55" cy="55" r="5" fill="rgba(248,243,232,0.6)"/>
+        <!-- N S E W ticks -->
+        <line x1="55" y1="8" x2="55" y2="16" stroke="rgba(248,243,232,0.5)" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="55" y1="94" x2="55" y2="102" stroke="rgba(248,243,232,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="8" y1="55" x2="16" y2="55" stroke="rgba(248,243,232,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="94" y1="55" x2="102" y2="55" stroke="rgba(248,243,232,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- North needle (gold) -->
+        <path d="M55 18 L60 55 L55 50 L50 55 Z" fill="#C8872E" opacity="0.9"/>
+        <!-- South needle (cream) -->
+        <path d="M55 92 L60 55 L55 60 L50 55 Z" fill="rgba(248,243,232,0.4)"/>
+        <!-- Label N -->
+        <text x="50" y="7" font-family="Manrope,sans-serif" font-size="9" font-weight="700" fill="rgba(248,243,232,0.7)">N</text>
+      </svg>
+
+      <p class="e404-eyebrow">Error 404</p>
+      <div class="e404-num" aria-hidden="true">404</div>
+
+      <h1 id="e404-heading">Lost in the <em>hills?</em></h1>
+      <p>The page you're looking for doesn't exist — it may have moved, been renamed, or perhaps it was never here to begin with. The good news: Mizoram is worth getting lost in. Our home page isn't.</p>
+
+      <div class="e404-actions">
+        <a href="./" class="btn btn-gold btn-lg">
+          Back to Home
+        </a>
+        <a href="./#contact" class="btn btn-ghost">
+          Contact Us <svg class="icon icon-sm"><use href="#ic-chev-r"/></svg>
+        </a>
+      </div>
+
+      <nav class="e404-links" aria-label="Quick links">
+        <a href="./#destinations">Destinations</a>
+        <a href="./#packages">Tours Packages</a>
+        <a href="./#experiences">Experiences</a>
+        <a href="./#culture">Culture</a>
+        <a href="./#faq">FAQ</a>
+      </nav>
+    </div>
+
+    <div class="e404-puan" aria-hidden="true"></div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="./" class="brand">
+        <img src="assets/logo.jpg" alt="Mizo Travel logo" width="40" height="40">
+        <span class="brand-text">Mizo<em>Travel</em></span>
+      </a>
+      <p>Local guides, small groups, and trips built around the hills as they actually are.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Mizo Travel on Instagram">IG</a>
+        <a href="#" aria-label="Mizo Travel on Facebook">FB</a>
+        <a href="#" aria-label="Mizo Travel on YouTube">YT</a>
+      </div>
+    </div>
+    <nav aria-label="Explore">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="./#destinations">Destinations</a></li>
+        <li><a href="./#experiences">Experiences</a></li>
+        <li><a href="./#packages">Tour Packages</a></li>
+        <li><a href="./#culture">Culture</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Company">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="./#about">About</a></li>
+        <li><a href="./#faq">FAQ</a></li>
+        <li><a href="./#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="footer-newsletter">
+      <h3>Stay in the loop</h3>
+      <p>Trail conditions & festival dates, monthly.</p>
+      <form id="footer-newsletter-form">
+        <input type="email" placeholder="you@example.com" aria-label="Email address" required>
+        <button type="submit" aria-label="Subscribe">
+          <svg class="icon" style="transform:rotate(90deg)"><use href="#ic-arrow-up"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© <span id="year"></span> Mizo Travel. All rights reserved.</p>
+    <p>Made in Aizawl, for the hills.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a class="whatsapp-float" href="https://wa.me/919531671758?text=Hi%20Mizo%20Travel!" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <span class="wa-ping" aria-hidden="true"></span>
+  <svg class="icon" aria-hidden="true"><use href="#ic-whatsapp"/></svg>
+  <span class="wa-tooltip">Chat with us</span>
+</a>
+
+<script src="js/script.js"></script>
+<script>
+  /* On the 404 page the header is always over a light bg — keep it scrolled-style */
+  document.getElementById('site-header').classList.add('is-scrolled');
+  /* Year */
+  var y = document.getElementById('year');
+  if(y) y.textContent = new Date().getFullYear();
+  /* Footer newsletter demo */
+  var fnf = document.getElementById('footer-newsletter-form');
+  if(fnf) fnf.addEventListener('submit', function(e){
+    e.preventDefault();
+    var inp = fnf.querySelector('input');
+    if(inp){ inp.value=''; inp.placeholder='Subscribed ✓'; setTimeout(function(){ inp.placeholder='you@example.com'; },3000); }
+  });
+</script>
+</body>
+</html>
