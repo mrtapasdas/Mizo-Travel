@@ -649,11 +649,12 @@
         <h2>One email a month, mostly about weather and waterfalls.</h2>
         <p>Trail conditions, festival dates and the odd last-minute seat on a small-group trek.</p>
       </div>
-      <form class="newsletter-form" id="newsletter-form">
-        <label class="sr-only" for="nl-email">Email address</label>
-        <input type="email" id="nl-email" placeholder="you@example.com" required>
-        <button type="submit" class="btn btn-gold">Subscribe</button>
-      </form>
+      <form class="newsletter-form" id="newsletter-form" novalidate>
+  <label class="sr-only" for="nl-email">Email address</label>
+  <input type="email" id="nl-email" placeholder="you@example.com" required>
+  <button type="submit" class="btn btn-gold" id="nl-btn">Subscribe</button>
+</form>
+<p class="nl-feedback" id="nl-feedback" role="status" aria-live="polite"></p>
     </div>
   </section>
 
@@ -849,6 +850,7 @@
         <input type="email" placeholder="you@example.com" aria-label="Email address" required>
         <button type="submit" aria-label="Subscribe"><svg class="icon"><use href="#ic-arrow-up" style="transform:rotate(90deg)"/></svg></button>
       </form>
+      <p class="nl-feedback fnl-feedback" id="fnl-feedback" role="status" aria-live="polite"></p>
     </div>
   </div>
   <div class="wrap footer-bottom">
