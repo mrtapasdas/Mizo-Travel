@@ -252,19 +252,71 @@ if (waForm){
   });
 }
   /* ---------- Newsletter forms (demo) ---------- */
-  ['newsletter-form','footer-newsletter-form'].forEach(function(id){
-    var form = document.getElementById(id);
-    if (!form) return;
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var input = form.querySelector('input[type="email"]');
-      if (input && input.value){
+  var NL_ENDPOINT = 'https://formspree.io/f/xjgqjznq';
+ 
+  function doNewsletterSubmit(form, feedbackId) {
+    var input = form.querySelector('input[type="email"]');
+    var btn   = form.querySelector('button[type="submit"]');
+    var fb    = document.getElementById(feedbackId);
+    if (!input || !input.value.trim()) return;
+ 
+    var email    = input.value.trim();
+    var origHTML = btn.innerHTML;
+ 
+    /* Loading state */
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    if (fb) { fb.textContent = ''; fb.className = 'nl-feedback'; }
+ 
+    fetch(NL_ENDPOINT, {
+      method  : 'POST',
+      headers : { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body    : JSON.stringify({
+        email    : email,
+        _subject : 'New Newsletter Subscriber — Mizo Travel',
+        _replyto : email
+      })
+    })
+    .then(function(res) {
+      if (res.ok) {
         input.value = '';
-        input.placeholder = 'Subscribed ✓';
-        setTimeout(function(){ input.placeholder = 'you@example.com'; }, 3000);
+        if (fb) {
+          fb.textContent = '✓ Subscribed! You\'ll hear from us soon.';
+          fb.className = 'nl-feedback nl-success';
+        }
+      } else {
+        return res.json().then(function(data) {
+          throw new Error(data.error || 'Server error');
+        });
       }
+    })
+    .catch(function() {
+      if (fb) {
+        fb.textContent = 'Something went wrong — please try again.';
+        fb.className = 'nl-feedback nl-error';
+      }
+    })
+    .then(function() {
+      btn.disabled = false;
+      btn.innerHTML = origHTML;
     });
-  });
+  }
+ 
+  var nlForm = document.getElementById('newsletter-form');
+  if (nlForm) {
+    nlForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      doNewsletterSubmit(nlForm, 'nl-feedback');
+    });
+  }
+ 
+  var fnlForm = document.getElementById('footer-newsletter-form');
+  if (fnlForm) {
+    fnlForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      doNewsletterSubmit(fnlForm, 'fnl-feedback');
+    });
+  }
 /* ---------- Hero parallax ---------- */
 var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var heroEl = document.querySelector('.hero');
