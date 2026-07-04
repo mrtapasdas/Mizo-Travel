@@ -463,6 +463,11 @@ strong{ color:var(--ink); font-weight:700; }
 .btn-wa .icon{ width:1.3em; height:1.3em; }
 
 .form-note{ font-size:.8rem; color:var(--ink-soft); margin-top:10px; line-height:1.5; }
+/* Allow 3-option toggles to wrap on narrow screens */
+@media (max-width: 520px){
+  .toggle-group{ flex-wrap:wrap; border-radius:16px; }
+  .toggle-opt span{ padding:9px 16px; }
+}
 
 /* ===================== FOOTER ===================== */
 .site-footer{ background:var(--forest-dark); color:rgba(248,243,232,.85); padding-top:70px; }
