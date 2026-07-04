@@ -547,6 +547,7 @@ strong{ color:var(--ink); font-weight:700; }
 @media (max-width: 920px){
   .main-nav{ display:none; }
   .nav-toggle{ display:flex; }
+  .header-actions .btn-gold{ display:none; }
   .about-grid, .culture-grid, .faq-grid, .contact-grid{ grid-template-columns:1fr; gap:40px; }
   .about-features{ grid-template-columns:1fr 1fr; }
   .how-steps{ grid-template-columns:1fr; gap:36px; }
