@@ -668,6 +668,64 @@
         </label>
       </div>
     </div>
+    <div class="form-row">
+  <div class="field">
+    <label for="wa-days">No. of Days</label>
+    <input type="number" id="wa-days" name="days" min="1" max="30" placeholder="4" required>
+    <span class="field-error">Please enter no. of days.</span>
+  </div>
+  <div class="field">
+    <label for="wa-nights">No. of Nights</label>
+    <input type="number" id="wa-nights" name="nights" min="0" max="30" placeholder="3">
+  </div>
+</div>
+    <div class="field">
+  <span class="field-label">Meal Preference</span>
+  <div class="toggle-group" role="radiogroup" aria-label="Meal preference">
+    <label class="toggle-opt">
+      <input type="radio" name="meal" value="Breakfast" checked>
+      <span>🥗 Breakfast</span>
+    </label>
+    <label class="toggle-opt">
+      <input type="radio" name="meal" value="Breakfast & Dinner">
+      <span>🍽️ Breakfast + Dinner</span>
+    </label>
+  </div>
+</div>
+    <div class="field">
+  <span class="field-label">Pickup &amp; Drop</span>
+  <div class="toggle-group" role="radiogroup" aria-label="Pickup and drop location">
+    <label class="toggle-opt">
+      <input type="radio" name="pickup" value="Sairang Railway Station" checked>
+      <span>🚉 Sairang Station</span>
+    </label>
+    <label class="toggle-opt">
+      <input type="radio" name="pickup" value="Lengpui Airport">
+      <span>✈️ Lengpui Airport</span>
+    </label>
+    <label class="toggle-opt">
+      <input type="radio" name="pickup" value="Not Required">
+      <span>✖ Not Required</span>
+    </label>
+  </div>
+</div>
+    <div class="field">
+  <span class="field-label">Inner Line Permit (ILP)</span>
+  <div class="toggle-group" role="radiogroup" aria-label="Permit assistance">
+    <label class="toggle-opt">
+      <input type="radio" name="permit" value="Yes — please arrange for me" checked>
+      <span>📋 Arrange for me</span>
+    </label>
+    <label class="toggle-opt">
+      <input type="radio" name="permit" value="Already have it">
+      <span>✅ Already have it</span>
+    </label>
+    <label class="toggle-opt">
+      <input type="radio" name="permit" value="Not needed">
+      <span>🚫 Not needed</span>
+    </label>
+  </div>
+</div>
 
     <div class="field">
       <label for="wa-message">Message <span class="field-optional">(optional)</span></label>
