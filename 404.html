@@ -309,13 +309,6 @@
   /* Year */
   var y = document.getElementById('year');
   if(y) y.textContent = new Date().getFullYear();
-  /* Footer newsletter demo */
-  var fnf = document.getElementById('footer-newsletter-form');
-  if(fnf) fnf.addEventListener('submit', function(e){
-    e.preventDefault();
-    var inp = fnf.querySelector('input');
-    if(inp){ inp.value=''; inp.placeholder='Subscribed ✓'; setTimeout(function(){ inp.placeholder='you@example.com'; },3000); }
-  });
 </script>
 </body>
 </html>
