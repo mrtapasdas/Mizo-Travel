@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gohavelock.com/sitemap.xml
+Sitemap: https://mizotravel.com/sitemap.xml
