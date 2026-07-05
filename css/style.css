@@ -505,7 +505,7 @@ strong{ color:var(--ink); font-weight:700; }
 }
 .footer-newsletter button:hover{ background:var(--gold-light); }
 .footer-newsletter button .icon{ width:18px; height:18px; stroke-width:2.2; display:block; }
-.footer-bottom{ display:flex; justify-content:space-between; padding:22px 24px; font-size:.82rem; color:rgba(248,243,232,.55); flex-wrap:wrap; gap:8px; }
+.footer-bottom{ display:flex; justify-content:space-between; padding:22px 24px; font-size:.82rem; color:rgba(248,243,232,.25); flex-wrap:wrap; gap:8px; }
 
 /* ===================== BACK TO TOP ===================== */
 .back-top{
