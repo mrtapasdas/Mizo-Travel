@@ -163,8 +163,9 @@
     });
   });
 
-  /* ---------- Back to top ---------- */
-  var backTop = document.getElementById('back-top');
+/* ---------- Back to top ---------- */
+var backTop = document.getElementById('back-top');
+if (backTop){
   function onScrollBackTop(){
     backTop.classList.toggle('is-visible', window.scrollY > 600);
   }
@@ -173,6 +174,7 @@
   backTop.addEventListener('click', function(){
     window.scrollTo({ top:0, behavior:'smooth' });
   });
+}
 
  /* ---------- WhatsApp contact form ---------- */
 var waForm = document.getElementById('wa-form');
