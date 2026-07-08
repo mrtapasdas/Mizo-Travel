@@ -30,6 +30,11 @@
   .site-header .main-nav a{ color:var(--ink); }
   .site-header .nav-toggle{ color:var(--ink); }
   .site-header .main-nav a::after{ background:var(--gold); }
+  
+  /* Prevent scroll handler from making text cream on cream bg */
+.site-header:not(.is-scrolled) .brand-text{ color:var(--ink); }
+.site-header:not(.is-scrolled) .main-nav a{ color:var(--ink); }
+.site-header:not(.is-scrolled) .nav-toggle{ color:var(--ink); }
 
   .page-404{
     min-height:calc(100vh - 72px);
@@ -295,7 +300,7 @@
   </div>
   <div class="wrap footer-bottom">
     <p>© <span id="year"></span> Mizo Travel. All rights reserved.</p>
-    <p>Made in Aizawl, for the hills.</p>
+    <p>Made in Aizawl, for the Hills.</p>
   </div>
 </footer>
 
