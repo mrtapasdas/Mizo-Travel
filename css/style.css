@@ -505,7 +505,12 @@ strong{ color:var(--ink); font-weight:700; }
 }
 .footer-newsletter button:hover{ background:#E3AC57 !important; }
 .footer-newsletter button .icon{ width:18px; height:18px; display:block; }
-.footer-bottom{ display:flex; justify-content:space-between; padding:22px 24px; font-size:.82rem; color:rgba(248,243,232,.55); flex-wrap:wrap; gap:8px; }
+.footer-bottom{
+    flex-direction:column; align-items:center; text-align:center;
+    padding:28px 18px; gap:6px;
+    color:rgba(248,243,232,.8);
+    border-top:1px solid rgba(248,243,232,.1);
+  }
 
 /* ===================== BACK TO TOP ===================== */
 .back-top{
