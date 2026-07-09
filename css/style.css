@@ -638,6 +638,10 @@ strong{ color:var(--ink); font-weight:700; }
     border-top:1px solid rgba(248,243,232,.1);
   }
 }
+@media (max-width:1100px){
+  .hero-inner{ gap:28px !important; padding:100px 0 120px !important; }
+  .hero-visual{ flex:0 0 360px !important; width:360px !important; }
+}
 
 .nl-feedback{ font-size:.84rem; font-weight:600; min-height:1.3em; margin-top:10px; display:block; }
 .nl-success{ color:var(--forest); }
