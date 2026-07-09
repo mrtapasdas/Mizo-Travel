@@ -611,8 +611,10 @@ strong{ color:var(--ink); font-weight:700; }
   .about-features{ grid-template-columns:1fr 1fr; }
   .how-steps{ grid-template-columns:1fr; gap:36px; }
   .section{ padding:80px 0; }
-  .hero-inner{ grid-template-columns:1fr; gap:0; }
-  .hero-visual{ display:none; }
+  .hero-visual{ display:none !important; }
+  .hero-inner{ flex-direction:column !important; padding:100px 0 80px !important; align-items:flex-start !important; }
+  .hero-copy{ flex:none !important; max-width:100% !important; }
+  .hero h1{ font-size:clamp(2.2rem, 1.6rem + 5vw, 3.2rem) !important; }
 }
 
 @media (max-width: 680px){
@@ -635,67 +637,6 @@ strong{ color:var(--ink); font-weight:700; }
     color:rgba(248,243,232,.8);
     border-top:1px solid rgba(248,243,232,.1);
   }
-}
-
-/* ===== HERO TWO-COLUMN LAYOUT OVERRIDE ===== */
-.hero-inner{
-  position:relative !important;
-  z-index:1 !important;
-  display:flex !important;
-  flex-direction:row !important;
-  align-items:center !important;
-  gap:40px !important;
-  padding:110px 0 130px !important;
-  width:100% !important;
-  box-sizing:border-box !important;
-}
-.hero-copy{
-  flex:1 1 auto !important;
-  min-width:0 !important;
-  max-width:none !important;
-  width:auto !important;
-}
-.hero-visual{
-  flex:0 0 320px !important;
-  width:320px !important;
-  min-width:0 !important;
-  position:static !important;
-  top:auto !important; right:auto !important; transform:none !important;
-  display:flex !important;
-  flex-direction:column !important;
-  gap:14px !important;
-  padding-top:0 !important;
-  animation:hero-rise .85s ease .6s both !important;
-}
-
-/* Tablet */
-@media (max-width:1100px){
-  .hero-inner{ gap:28px !important; padding:100px 0 120px !important; }
-  .hero-visual{ flex:0 0 270px !important; width:270px !important; }
-}
-
-/* Mobile */
-@media (max-width:920px){
-  .hero-inner{
-    flex-direction:column !important;
-    align-items:flex-start !important;
-    text-align:left !important;
-    padding:100px 0 80px !important;
-    gap:0 !important;
-  }
-  .hero-copy{
-    width:100% !important;
-    max-width:100% !important;
-    flex:none !important;
-  }
-  .hero-visual{ display:none !important; }
-  .hero h1{
-    font-size:clamp(2.2rem, 1.6rem + 5vw, 3.2rem) !important;
-    text-align:left !important;
-  }
-  .hero-sub{ text-align:left !important; max-width:100% !important; }
-  .hero-cta{ justify-content:flex-start !important; }
-  .eyebrow{ justify-content:flex-start !important; }
 }
 
 .nl-feedback{ font-size:.84rem; font-weight:600; min-height:1.3em; margin-top:10px; display:block; }
