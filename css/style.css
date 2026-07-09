@@ -612,7 +612,7 @@ strong{ color:var(--ink); font-weight:700; }
   .how-steps{ grid-template-columns:1fr; gap:36px; }
   .section{ padding:80px 0; }
   .hero-visual{ display:none !important; }
-  .hero-inner{ flex-direction:column !important; padding:90px 18 55px !important; align-items:flex-start !important; }
+  .hero-inner{ flex-direction:column !important; padding:40px 18 40px !important; align-items:flex-start !important; }
   .hero-copy{ flex:none !important; max-width:100% !important; }
   .hero h1{ font-size:clamp(2.2rem, 1.6rem + 5vw, 3.2rem) !important; }
 }
