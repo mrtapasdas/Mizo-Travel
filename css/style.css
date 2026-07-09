@@ -198,10 +198,10 @@ strong{ color:var(--ink); font-weight:700; }
 @keyframes hero-rise{ to{ opacity:1; transform:translateY(0); } }
 
 .hero-inner{
-  position:relative; z-index:1; padding:60px 0 120px;
-  display:grid; grid-template-columns:1fr 320px; gap:52px; align-items:center;
+  position:relative; z-index:1; padding:100px 0 140px;
+  display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:start;
 }
-.hero-copy{ max-width:640px; }
+.hero-copy{ width:100%; }
 .hero-copy .eyebrow{ color:var(--gold-light); }
 .hero-copy .eyebrow::before{ background:var(--gold-light); }
 .hero h1{
@@ -213,6 +213,7 @@ strong{ color:var(--ink); font-weight:700; }
 /* ---- Hero right panel ---- */
 .hero-visual{
   display:flex; flex-direction:column; gap:14px;
+  padding-top:52px;
   animation:hero-rise .85s var(--ease) .6s both;
 }
 .hv-main{
