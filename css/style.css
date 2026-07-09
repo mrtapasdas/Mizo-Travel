@@ -641,33 +641,61 @@ strong{ color:var(--ink); font-weight:700; }
 .hero-inner{
   position:relative !important;
   z-index:1 !important;
-  padding:100px 0 160px !important;
-  display:block !important;
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  gap:40px !important;
+  padding:110px 0 130px !important;
   width:100% !important;
+  box-sizing:border-box !important;
 }
 .hero-copy{
-  max-width:56% !important;
-  width:56% !important;
+  flex:1 1 auto !important;
+  min-width:0 !important;
+  max-width:none !important;
+  width:auto !important;
 }
 .hero-visual{
-  position:absolute !important;
-  top:50% !important;
-  right:0 !important;
-  transform:translateY(-50%) !important;
-  width:38% !important;
+  flex:0 0 320px !important;
+  width:320px !important;
+  min-width:0 !important;
+  position:static !important;
+  top:auto !important; right:auto !important; transform:none !important;
   display:flex !important;
   flex-direction:column !important;
   gap:14px !important;
   padding-top:0 !important;
   animation:hero-rise .85s ease .6s both !important;
 }
-@media (max-width:1024px){
-  .hero-copy{ max-width:55% !important; width:55% !important; }
-  .hero-visual{ width:40% !important; }
+
+/* Tablet */
+@media (max-width:1100px){
+  .hero-inner{ gap:28px !important; padding:100px 0 120px !important; }
+  .hero-visual{ flex:0 0 270px !important; width:270px !important; }
 }
+
+/* Mobile */
 @media (max-width:920px){
-  .hero-copy{ max-width:100% !important; width:100% !important; }
+  .hero-inner{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    text-align:left !important;
+    padding:100px 0 80px !important;
+    gap:0 !important;
+  }
+  .hero-copy{
+    width:100% !important;
+    max-width:100% !important;
+    flex:none !important;
+  }
   .hero-visual{ display:none !important; }
+  .hero h1{
+    font-size:clamp(2.2rem, 1.6rem + 5vw, 3.2rem) !important;
+    text-align:left !important;
+  }
+  .hero-sub{ text-align:left !important; max-width:100% !important; }
+  .hero-cta{ justify-content:flex-start !important; }
+  .eyebrow{ justify-content:flex-start !important; }
 }
 
 .nl-feedback{ font-size:.84rem; font-weight:600; min-height:1.3em; margin-top:10px; display:block; }
