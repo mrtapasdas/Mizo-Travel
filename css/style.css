@@ -297,7 +297,8 @@ strong{ color:var(--ink); font-weight:700; }
   overflow: hidden; 
   grid-column: span 1; 
   grid-row: span 1;
-  background-color: #1a1a1a; /* Fallback color before image loads */
+  /* Kept as a fallback background in case an image takes a second to load */
+  background: linear-gradient(155deg, var(--tone-a), var(--tone-b));
   color: var(--cream); 
   display: flex; 
   transition: transform .35s var(--ease), box-shadow .35s var(--ease);
@@ -313,7 +314,7 @@ strong{ color:var(--ink); font-weight:700; }
   grid-row: span 2; 
 }
 
-/* New Image Class */
+/* New Image Styling */
 .dest-img {
   position: absolute;
   inset: 0;
@@ -321,17 +322,28 @@ strong{ color:var(--ink); font-weight:700; }
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  transition: transform .5s var(--ease);
+  transition: transform 0.6s var(--ease);
 }
 
-/* Optional: Adds a slight zoom effect to the image on hover */
+/* Subtle image scale effect on hover */
 .dest-card:hover .dest-img {
   transform: scale(1.05);
 }
 
+/* CSS Gradient Overlay to ensure text readability (Replaces old HTML scrim) */
+.dest-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(13,11,7,0.85) 0%, rgba(13,11,7,0.4) 50%, rgba(13,11,7,0.05) 100%);
+  pointer-events: none;
+}
+
+/* Z-index bumped to 2 so it sits above the new pseudo-element overlay */
 .dest-body { 
   position: relative; 
-  z-index: 1; 
+  z-index: 2; 
   padding: 26px; 
   display: flex; 
   flex-direction: column; 
@@ -365,7 +377,6 @@ strong{ color:var(--ink); font-weight:700; }
   color: rgba(248,243,232,.88); 
   font-size: .9rem; 
   max-width: 340px; 
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6); /* Added to keep text readable without the scrim */
 }
 
 .dest-fact {
@@ -376,12 +387,12 @@ strong{ color:var(--ink); font-weight:700; }
   text-transform: uppercase;
   font-weight: 700; 
   color: var(--cream); 
-  background: rgba(0,0,0,.4); /* Darkened slightly to ensure legibility over images */
+  background: rgba(0,0,0,.35); /* Slightly darkened to pop more against images */
+  backdrop-filter: blur(4px); /* Added a nice modern blur effect */
   padding: 6px 12px; 
   border-radius: 999px; 
   width: max-content;
 }
-
 /* ===================== EXPERIENCES ===================== */
 .exp-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
 .exp-card{
