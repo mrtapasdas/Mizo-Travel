@@ -284,63 +284,57 @@ strong{ color:var(--ink); font-weight:700; }
 .feature-card p{ font-size:.92rem; }
 
 /* ===================== DESTINATIONS ===================== */
-/* ===================== DESTINATIONS ===================== */
 
 .dest-grid{
-
   display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:240px; gap:20px;
-
 }
-
 .dest-card{
-
   position:relative; border-radius:var(--radius); overflow:hidden; grid-column:span 1; grid-row:span 1;
-
   background:linear-gradient(155deg, var(--tone-a), var(--tone-b));
-
   color:var(--cream); display:flex; transition:transform .35s var(--ease), box-shadow .35s var(--ease);
-
 }
-
 .dest-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-md); }
-
 .dest-card--lg{ grid-column:span 2; grid-row:span 2; }
-
 .dest-pattern{
-
   position:absolute; inset:0; opacity:.16;
-
   background-image: repeating-linear-gradient(135deg, rgba(248,243,232,.7) 0 2px, transparent 2px 26px);
-
 }
-
 .dest-scrim{
-
   position:absolute; inset:0;
-
   background:linear-gradient(to top, rgba(13,11,7,.68) 0%, rgba(13,11,7,.22) 52%, rgba(13,11,7,0) 76%);
-
 }
-
 .dest-body{ position:relative; z-index:1; padding:26px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; }
-
 .dest-body .icon{ width:1.8em; height:1.8em; margin-bottom:auto; opacity:.85; }
-
 .dest-card--lg .dest-body .icon{ width:2.3em; height:2.3em; }
-
 .dest-body h3{ color:var(--cream); margin-bottom:8px; font-size:1.15rem; }
-
 .dest-card--lg .dest-body h3{ font-size:1.55rem; }
-
 .dest-body p{ color:rgba(248,243,232,.88); font-size:.9rem; max-width:340px; }
-
 .dest-fact{
-
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-
   font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
-
 }
+/* ===================== DESTINATION CARD IMAGES ===================== */
+.dest-bg-img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover; object-position:center;
+  z-index:0;
+  transition:transform .65s var(--ease);
+  will-change:transform;
+}
+.dest-card:hover .dest-bg-img{ transform:scale(1.08); }
+.dest-scrim{
+  position:absolute; inset:0; z-index:1;
+  background:linear-gradient(
+    to top,
+    rgba(8,6,3,.92) 0%,
+    rgba(8,6,3,.62) 42%,
+    rgba(8,6,3,.22) 72%,
+    rgba(8,6,3,.0) 100%
+  );
+}
+.dest-pattern{ opacity:.07 !important; z-index:1; }
+.dest-body{ z-index:2; }
 
 /* ===================== EXPERIENCES ===================== */
 .exp-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
