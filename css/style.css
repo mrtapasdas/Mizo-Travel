@@ -315,7 +315,7 @@ strong{ color:var(--ink); font-weight:700; }
 }
 .dest-fact1{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--forest); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+  font-weight:700; color:var(--cream); background:var(--forest); padding:6px 12px; border-radius:999px; width:max-content;
 }
 .dest-fact2{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
