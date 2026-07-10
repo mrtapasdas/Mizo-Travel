@@ -323,19 +323,19 @@ strong{ color:var(--ink); font-weight:700; }
 }
 .dest-fact4{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--cream); background:var(--forest); padding:6px 12px; border-radius:999px; width:max-content;
+  font-weight:700; color:var(--cream); background:var(--maroon-dark); padding:6px 12px; border-radius:999px; width:max-content;
 }
 .dest-fact5{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--cream); background:var(--maroon); padding:6px 12px; border-radius:999px; width:max-content;
+  font-weight:700; color:var(--cream); background:var(--gold-deep); padding:6px 12px; border-radius:999px; width:max-content;
 }
 .dest-fact6{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--cream); background:var(--gold); padding:6px 12px; border-radius:999px; width:max-content;
+  font-weight:700; color:var(--cream); background:var(--maroon); padding:6px 12px; border-radius:999px; width:max-content;
 }
 .dest-fact7{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--cream); background:var(--forest); padding:6px 12px; border-radius:999px; width:max-content;
+  font-weight:700; color:var(--cream); background:var(--forest-dark); padding:6px 12px; border-radius:999px; width:max-content;
 }
 .dest-fact8{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
