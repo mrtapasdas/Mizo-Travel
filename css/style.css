@@ -313,6 +313,42 @@ strong{ color:var(--ink); font-weight:700; }
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
   font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
 }
+.dest-fact1{
+  display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
+  font-weight:700; color:var(--forest); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+}
+.dest-fact2{
+  display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
+  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+}
+.dest-fact3{
+  display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
+  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+}
+.dest-fact4{
+  display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
+  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+}
+.dest-fact5{
+  display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
+  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+}
+.dest-fact6{
+  display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
+  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+}
+.dest-fact7{
+  display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
+  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+}
+.dest-fact8{
+  display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
+  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+}
+.dest-fact9{
+  display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
+  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+}
 /* ===================== DESTINATION CARD IMAGES ===================== */
 .dest-bg-img{
   position:absolute; inset:0;
