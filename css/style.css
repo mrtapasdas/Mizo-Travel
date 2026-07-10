@@ -284,72 +284,124 @@ strong{ color:var(--ink); font-weight:700; }
 .feature-card p{ font-size:.92rem; }
 
 /* ===================== DESTINATIONS ===================== */
-
-.dest-grid{
-
-  display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:240px; gap:20px;
-
+.dest-grid {
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  grid-auto-rows: 240px; 
+  gap: 20px;
+  grid-auto-flow: dense; /* Keeps the grid tightly packed */
 }
 
-.dest-card{
-
-  position:relative; border-radius:var(--radius); overflow:hidden; grid-column:span 1; grid-row:span 1;
-
-  background:linear-gradient(155deg, var(--tone-a), var(--tone-b));
-
-  color:var(--cream); display:flex; transition:transform .35s var(--ease), box-shadow .35s var(--ease);
-
+.dest-card {
+  position: relative; 
+  border-radius: var(--radius); 
+  overflow: hidden; 
+  grid-column: span 1; 
+  grid-row: span 1;
+  background: linear-gradient(155deg, var(--tone-a), var(--tone-b));
+  color: var(--cream); 
+  display: flex; 
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
 }
 
-.dest-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-md); }
+.dest-card:hover { 
+  transform: translateY(-6px); 
+  box-shadow: var(--shadow-md); 
+}
 
-.dest-card--lg{ grid-column:span 2; grid-row:span 2; }
+.dest-card--lg { 
+  grid-column: span 2; 
+  grid-row: span 2; 
+}
+
+/* --- NEW: Image Styling --- */
 .dest-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0; /* Keeps image at the very back */
+  z-index: 0; /* Sits at the very back */
   transition: transform 0.6s var(--ease);
 }
+
+/* Optional: Subtle zoom effect on hover to make the cards feel premium */
 .dest-card:hover .dest-img {
   transform: scale(1.05); 
 }
 
+/* --- UPDATED: Added explicit z-indexes --- */
 .dest-pattern {
   position: absolute; 
   inset: 0; 
-  opacity: .16;
+  opacity: .16; 
+  z-index: 1; /* Sits above the image */
+  pointer-events: none;
   background-image: repeating-linear-gradient(135deg, rgba(248,243,232,.7) 0 2px, transparent 2px 26px);
-  z-index: 1; 
 }
 
 .dest-scrim {
   position: absolute; 
-  inset: 0;
-  background: linear-gradient(to top, rgba(13,11,7,.85) 0%, rgba(13,11,7,.3) 50%, rgba(13,11,7,0) 80%);
-  z-index: 1;
+  inset: 0; 
+  z-index: 2; /* Sits above the pattern */
+  pointer-events: none;
+  /* Darkened the 0-50% range slightly to guarantee text readability over photos */
+  background: linear-gradient(to top, rgba(13,11,7,.85) 0%, rgba(13,11,7,.45) 50%, rgba(13,11,7,0) 76%);
 }
 
-.dest-body{ position:relative; z-index:2; padding:26px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; }
+.dest-body { 
+  position: relative; 
+  z-index: 3; /* Sits at the very front */
+  padding: 26px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-end; 
+  height: 100%; 
+  pointer-events: none;
+}
 
-.dest-body .icon{ width:1.8em; height:1.8em; margin-bottom:auto; opacity:.85; }
+.dest-body .icon { 
+  width: 1.8em; 
+  height: 1.8em; 
+  margin-bottom: auto; 
+  opacity: .85; 
+}
 
-.dest-card--lg .dest-body .icon{ width:2.3em; height:2.3em; }
+.dest-card--lg .dest-body .icon { 
+  width: 2.3em; 
+  height: 2.3em; 
+}
 
-.dest-body h3{ color:var(--cream); margin-bottom:8px; font-size:1.15rem; }
+.dest-body h3 { 
+  color: var(--cream); 
+  margin-bottom: 8px; 
+  font-size: 1.15rem; 
+}
 
-.dest-card--lg .dest-body h3{ font-size:1.55rem; }
+.dest-card--lg .dest-body h3 { 
+  font-size: 1.55rem; 
+}
 
-.dest-body p{ color:rgba(248,243,232,.88); font-size:.9rem; max-width:340px; }
+.dest-body p { 
+  color: rgba(248,243,232,.88); 
+  font-size: .9rem; 
+  max-width: 340px; 
+}
 
-.dest-fact{
-
-  display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-
-  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
-
+.dest-fact {
+  display: inline-block; 
+  margin-top: 14px; 
+  font-size: .74rem; 
+  letter-spacing: .06em; 
+  text-transform: uppercase;
+  font-weight: 700; 
+  color: var(--cream); 
+  /* Slightly darkened background for the pill to contrast against the image */
+  background: rgba(0,0,0,.35); 
+  padding: 6px 12px; 
+  border-radius: 999px; 
+  width: max-content;
+  backdrop-filter: blur(4px);
 }
 
 /* ===================== EXPERIENCES ===================== */
