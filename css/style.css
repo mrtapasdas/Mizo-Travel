@@ -309,45 +309,41 @@ strong{ color:var(--ink); font-weight:700; }
 .dest-body h3{ color:var(--cream); margin-bottom:8px; font-size:1.15rem; }
 .dest-card--lg .dest-body h3{ font-size:1.55rem; }
 .dest-body p{ color:rgba(248,243,232,.88); font-size:.9rem; max-width:340px; }
-.dest-fact{
-  display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
-}
 .dest-fact1{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
   font-weight:700; color:var(--cream); background:var(--forest); padding:6px 12px; border-radius:999px; width:max-content;
 }
 .dest-fact2{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+  font-weight:700; color:var(--cream); background:var(--gold); padding:6px 12px; border-radius:999px; width:max-content;
 }
 .dest-fact3{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+  font-weight:700; color:var(--cream); background:var(--maroon); padding:6px 12px; border-radius:999px; width:max-content;
 }
 .dest-fact4{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+  font-weight:700; color:var(--cream); background:var(--forest); padding:6px 12px; border-radius:999px; width:max-content;
 }
 .dest-fact5{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+  font-weight:700; color:var(--cream); background:var(--maroon); padding:6px 12px; border-radius:999px; width:max-content;
 }
 .dest-fact6{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+  font-weight:700; color:var(--cream); background:var(--gold); padding:6px 12px; border-radius:999px; width:max-content;
 }
 .dest-fact7{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+  font-weight:700; color:var(--cream); background:var(--forest); padding:6px 12px; border-radius:999px; width:max-content;
 }
 .dest-fact8{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+  font-weight:700; color:var(--cream); background:var(--gold); padding:6px 12px; border-radius:999px; width:max-content;
 }
 .dest-fact9{
   display:inline-block; margin-top:14px; font-size:.74rem; letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--cream); background:rgba(0,0,0,.18); padding:6px 12px; border-radius:999px; width:max-content;
+  font-weight:700; color:var(--cream); background:var(--forest); padding:6px 12px; border-radius:999px; width:max-content;
 }
 /* ===================== DESTINATION CARD IMAGES ===================== */
 .dest-bg-img{
