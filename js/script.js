@@ -223,7 +223,7 @@ if (waForm){
 
     /* Build WhatsApp message */
     var lines = [
-      'Hi Mizo Travel! 👋', '',
+      'Hi Mizo Travel!', '',
       '*Name:* '            + name,
       '*Contact:* '         + contact,
       '*No. of People:* '   + people,
