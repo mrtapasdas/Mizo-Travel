@@ -221,6 +221,16 @@ strong{ color:var(--ink); font-weight:700; }
   border:1px solid rgba(248,243,232,.18); border-radius:20px;
   padding:24px 22px; display:flex; flex-direction:column; gap:14px;
 }
+.hv-badge-top{
+  display:inline-flex; align-items:center; gap:7px;
+  background:linear-gradient(135deg, var(--gold-deep), var(--gold));
+  color:#231405; border-radius:999px;
+  padding:7px 14px;
+  font-size:.78rem; font-weight:800;
+  letter-spacing:.04em; text-transform:uppercase;
+  width:max-content; margin-bottom:14px;
+  box-shadow:0 4px 14px -4px rgba(168,107,20,.5);
+}
 .hv-stars{ color:var(--gold-light); font-size:1.15rem; letter-spacing:3px; line-height:1; }
 .hv-rated{ font-size:.82rem; font-weight:700; color:rgba(248,243,232,.75); margin:0; margin-top:-6px; }
 .hv-row{
