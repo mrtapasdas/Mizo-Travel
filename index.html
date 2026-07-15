@@ -865,6 +865,10 @@
           <input type="radio" name="accommodation" value="Homestay">
           <span>🏡 Homestay</span>
         </label>
+        <label class="toggle-opt">
+  <input type="radio" name="accommodation" value="Not Required">
+  <span>✖ Not Required</span>
+</label>
       </div>
     </div>
 
@@ -939,7 +943,23 @@
     </label>
   </div>
 </div>
-
+<div class="field">
+  <span class="field-label">Package Type</span>
+  <div class="toggle-group" role="radiogroup" aria-label="Package type">
+    <label class="toggle-opt">
+      <input type="radio" name="package" value="Budget Package" checked>
+      <span>🟢 Budget</span>
+    </label>
+    <label class="toggle-opt">
+      <input type="radio" name="package" value="Standard Package">
+      <span>🔵 Standard</span>
+    </label>
+    <label class="toggle-opt">
+      <input type="radio" name="package" value="Premium Package">
+      <span>⭐ Premium</span>
+    </label>
+  </div>
+</div>
     <div class="field">
       <label for="wa-message">Message <span class="field-optional">(optional)</span></label>
       <textarea id="wa-message" name="message" rows="3" placeholder="Tell us about your dream Mizoram trip…"></textarea>
