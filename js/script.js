@@ -199,6 +199,8 @@ if (waForm){
     var days    = document.getElementById('wa-days').value.trim();
     var nights  = document.getElementById('wa-nights').value.trim();
     var accom   = (waForm.querySelector('[name="accommodation"]:checked') || {}).value || '';
+    var rooms    = document.getElementById('wa-rooms') ? document.getElementById('wa-rooms').value.trim() : '';
+    var roomType = (waForm.querySelector('[name="room_type"]:checked') || {}).value || '';
     var transp  = (waForm.querySelector('[name="transport"]:checked') || {}).value || '';
     var meal    = (waForm.querySelector('[name="meal"]:checked') || {}).value || '';
     var pickup  = (waForm.querySelector('[name="pickup"]:checked') || {}).value || '';
@@ -247,6 +249,7 @@ if (waForm){
       '*Travel Date:* '     + dateStr,
       '*Duration:* '        + duration,
       '*Accommodation:* '   + accom,
+      '*Rooms:* '           + (rooms ? rooms + ' (' + roomType + ')' : 'Not specified'),
       '*Transport:* '       + transp,
       '*Meal Preference:* ' + meal,
       '*Pickup & Drop:* '   + pickup,
