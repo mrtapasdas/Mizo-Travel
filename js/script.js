@@ -177,7 +177,18 @@ if (backTop){
 }
 
  /* ---------- WhatsApp contact form ---------- */
-var waForm = document.getElementById('wa-form');
+// NEW: Prevent selecting back dates in the calendar UI
+var waDateInput = document.getElementById('wa-date');
+if (waDateInput) {
+  var todayDate = new Date();
+  var dd = String(todayDate.getDate()).padStart(2, '0');
+  var mm = String(todayDate.getMonth() + 1).padStart(2, '0'); // January is 0!
+  var yyyy = todayDate.getFullYear();
+  // Sets the minimum selectable date to today (Format: YYYY-MM-DD)
+  waDateInput.setAttribute('min', yyyy + '-' + mm + '-' + dd);
+}
+   
+   var waForm = document.getElementById('wa-form');
 if (waForm){
   waForm.addEventListener('submit', function(e){
     e.preventDefault();
@@ -195,12 +206,17 @@ if (waForm){
     var pkg = (waForm.querySelector('[name="package"]:checked') || {}).value || '';
     var message = document.getElementById('wa-message').value.trim();
 
+     /* NEW: Setup date objects for JS validation fallback */
+    var selectedDateObj = new Date(date + 'T00:00:00');
+    var todayObj = new Date();
+    todayObj.setHours(0, 0, 0, 0);
+     
     /* Validate required fields */
     var checks = [
       { el: document.getElementById('wa-name'),    ok: name.length > 1 },
       { el: document.getElementById('wa-contact'), ok: contact.length > 5 },
       { el: document.getElementById('wa-people'),  ok: people !== '' && parseInt(people, 10) > 0 },
-      { el: document.getElementById('wa-date'),    ok: date.length > 0 },
+      { el: document.getElementById('wa-date'),    ok: date.length > 0 && selectedDateObj >= todayObj },
       { el: document.getElementById('wa-days'),    ok: days !== '' && parseInt(days, 10) > 0 }
     ];
     var valid = true;
