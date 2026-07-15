@@ -871,6 +871,25 @@
 </label>
       </div>
     </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="wa-rooms">How many rooms?</label>
+        <input type="number" id="wa-rooms" name="rooms" min="1" placeholder="1">
+      </div>
+      <div class="field">
+        <span class="field-label">Room Type</span>
+        <div class="toggle-group" role="radiogroup" aria-label="Room type preference">
+          <label class="toggle-opt">
+            <input type="radio" name="room_type" value="AC">
+            <span>❄️ AC</span>
+          </label>
+          <label class="toggle-opt">
+            <input type="radio" name="room_type" value="Non-AC" checked>
+            <span>🌬️ Non-AC</span>
+          </label>
+        </div>
+      </div>
+    </div>
 
     <div class="field">
       <span class="field-label">Transport</span>
