@@ -192,6 +192,7 @@ if (waForm){
     var meal    = (waForm.querySelector('[name="meal"]:checked') || {}).value || '';
     var pickup  = (waForm.querySelector('[name="pickup"]:checked') || {}).value || '';
     var permit  = (waForm.querySelector('[name="permit"]:checked') || {}).value || '';
+    var pkg = (waForm.querySelector('[name="package"]:checked') || {}).value || '';
     var message = document.getElementById('wa-message').value.trim();
 
     /* Validate required fields */
@@ -233,7 +234,8 @@ if (waForm){
       '*Transport:* '       + transp,
       '*Meal Preference:* ' + meal,
       '*Pickup & Drop:* '   + pickup,
-      '*Permit (ILP):* '    + permit
+      '*Permit (ILP):* '    + permit,
+      '*Package Type:* '    + pkg
     ];
     if (message) lines.push('*Message:* ' + message);
 
