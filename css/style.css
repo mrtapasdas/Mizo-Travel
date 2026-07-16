@@ -534,6 +534,43 @@ strong{ color:var(--ink); font-weight:700; }
 .contact-info p{ display:flex; align-items:flex-start; gap:.7em; font-size:.95rem; color:var(--ink-soft); }
 .contact-info .icon{ color:var(--forest); margin-top:2px; }
 
+/* ===================== GMB MAP + RATING CARD ===================== */
+.gmb-map-wrap{
+  border-radius:12px; overflow:hidden;
+  border:1px solid var(--line);
+  margin-bottom:14px;
+}
+.gmb-card{
+  display:flex; align-items:center; justify-content:space-between;
+  background:var(--cream-soft); border:1.5px solid var(--line);
+  border-radius:var(--radius); padding:14px 16px;
+  text-decoration:none; transition:box-shadow .25s var(--ease), border-color .25s var(--ease);
+  margin-bottom:10px;
+}
+.gmb-card:hover{ box-shadow:var(--shadow-sm); border-color:var(--forest); }
+.gmb-card-left{ display:flex; align-items:center; gap:12px; }
+.gmb-g{ flex-shrink:0; }
+.gmb-card-text{ display:flex; flex-direction:column; gap:3px; }
+.gmb-name{ font-family:var(--font-display); font-size:1rem; font-weight:600; color:var(--ink); margin:0; }
+.gmb-stars{ display:flex; gap:1px; }
+.gmb-stars span{ color:#F9AB00; font-size:1rem; line-height:1; }
+.gmb-half{ opacity:.55; }
+.gmb-meta{ font-size:.78rem; color:var(--ink-soft); margin:0; font-weight:600; }
+.gmb-meta span{ color:var(--forest); text-decoration:underline; text-underline-offset:2px; }
+.gmb-card-right{ flex-shrink:0; }
+.gmb-cta{
+  font-size:.8rem; font-weight:700; color:var(--forest);
+  background:rgba(30,86,49,.08); padding:6px 12px; border-radius:999px;
+}
+.gmb-review-btn{
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  width:100%; padding:11px 16px; border-radius:var(--radius-sm);
+  border:1.5px solid var(--gold); color:var(--gold-deep); background:transparent;
+  font-size:.88rem; font-weight:700; text-decoration:none; margin-bottom:18px;
+  transition:background .25s var(--ease), color .25s var(--ease);
+}
+.gmb-review-btn:hover{ background:var(--gold); color:#231405; }
+
 /* ===================== WHATSAPP CONTACT FORM ===================== */
 .field-label{
   display:block; font-size:.84rem; font-weight:700; color:var(--ink); margin-bottom:6px;
