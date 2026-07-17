@@ -612,6 +612,32 @@ strong{ color:var(--ink); font-weight:700; }
   .toggle-opt span{ padding:9px 16px; }
 }
 
+/* ===================== AUTHORISED BY ===================== */
+.authorised-by{
+  background:var(--cream-deep); border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line); padding:36px 0; overflow:hidden;
+}
+.ab-head{ text-align:center; margin-bottom:24px; }
+.ab-eyebrow{ font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); justify-content:center; }
+.ab-eyebrow::before{ display:none; }
+.ab-strip{ position:relative; overflow:hidden; }
+.ab-strip::before,.ab-strip::after{ content:''; position:absolute; top:0; bottom:0; width:80px; z-index:2; pointer-events:none; }
+.ab-strip::before{ left:0;  background:linear-gradient(to right, var(--cream-deep), transparent); }
+.ab-strip::after{  right:0; background:linear-gradient(to left,  var(--cream-deep), transparent); }
+.ab-track{ display:flex; align-items:center; gap:32px; width:max-content; animation:ab-scroll 28s linear infinite; }
+.ab-track:hover{ animation-play-state:paused; }
+@keyframes ab-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+.ab-logo{
+  display:flex; align-items:center; gap:12px;
+  background:var(--cream-soft); border:1px solid var(--line); border-radius:999px;
+  padding:10px 20px 10px 14px; white-space:nowrap; box-shadow:var(--shadow-sm);
+  flex-shrink:0; transition:box-shadow .25s var(--ease), border-color .25s var(--ease);
+}
+.ab-logo:hover{ box-shadow:var(--shadow-md); border-color:var(--gold); }
+.ab-logo-text{ display:flex; flex-direction:column; gap:1px; }
+.ab-name{ font-size:.9rem; font-weight:700; color:var(--ink); line-height:1.2; }
+.ab-sub{ font-size:.72rem; font-weight:500; color:var(--ink-soft); line-height:1.2; }
+
 /* ===================== FOOTER ===================== */
 .site-footer{ background:var(--forest-dark); color:rgba(248,243,232,.85); padding-top:70px; }
 .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.3fr; gap:40px; padding-bottom:50px; border-bottom:1px solid rgba(248,243,232,.12); }
