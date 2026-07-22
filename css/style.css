@@ -745,16 +745,28 @@ strong{ color:var(--ink); font-weight:700; }
   .about-features{ grid-template-columns:1fr 1fr; }
   .how-steps{ grid-template-columns:1fr; gap:36px; }
   .section{ padding:80px 0; }
-  .hero-inner{ flex-direction:column; padding:40px 0 50px; align-items:stretch; }
-  .hero-copy{ flex:none; width:100%; }
-  .hero-visual{ flex:none; width:100%; padding-top:20px; }
+  .hero-inner{
+    flex-direction:column;
+    padding:40px 24px 50px;
+    align-items:stretch;
+  }
+  .hero-copy{
+    flex:none;
+    width:100%;
+  }
+  .hero-visual{
+    flex:none;
+    width:100%;
+    padding-top:20px;
+  }
   .hero h1{ font-size:clamp(2.2rem, 1.6rem + 5vw, 3.2rem); }
 }
 @media (max-width: 680px){
   .wrap{ padding:0 18px; }
   .hero{ padding-top:96px; }
   .hero h1{ font-size:clamp(2.1rem, 1.6rem + 6vw, 3rem); }
-  .hero-visual{ flex:none; width:100%; }
+  .hero-inner{ padding:32px 18px 44px; }
+  .hero-visual{ flex:none; width:100%; padding-top:16px; }
   .dest-grid{ display:flex; flex-direction:column; gap:14px; }
   .dest-card{ height:210px; }
   .dest-card--lg{ height:210px; }
