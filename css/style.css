@@ -199,7 +199,7 @@ strong{ color:var(--ink); font-weight:700; }
 
 .hero-inner{
   position:relative; z-index:1;
-  display:flex; flex-direction:row; align-items:center; gap:40px; padding:60px 24px 130px;
+  display:flex; flex-direction:row; align-items:center; gap:40px; padding:60px 0 130px;
 }
 .hero-copy{ flex:1 1 auto; min-width:0; }
 .hero-copy .eyebrow{ color:var(--gold-light); }
