@@ -681,6 +681,7 @@ strong{ color:var(--ink); font-weight:700; }
 .footer-newsletter button:hover{ background:#E3AC57 !important; }
 .footer-newsletter button .icon{ width:18px; height:18px; display:block; }
 .footer-bottom{
+    display: flex;
     flex-direction:column; align-items:center; text-align:center;
     padding:14px 24px; gap:6px;
     color:rgba(248,243,232,.8);
@@ -783,6 +784,7 @@ strong{ color:var(--ink); font-weight:700; }
   .culture-grid{ padding:60px 18px; }
   .back-top{ right:16px; bottom:16px; width:44px; height:44px; }
   .footer-bottom{
+    display: flex;
     flex-direction:column; align-items:center; text-align:center;
     padding:18px 10px; gap:6px;
     color:rgba(248,243,232,.8);
