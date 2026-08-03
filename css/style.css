@@ -697,30 +697,31 @@ strong{ color:var(--ink); font-weight:700; }
 }
 .back-top.is-visible{ opacity:1; transform:translateY(0); pointer-events:auto; }
 .back-top:hover{ background:var(--gold); color:#231405; }
-.whatsapp-float{
+.call-float{
   position:fixed; left:24px; bottom:24px; z-index:150;
   width:58px; height:58px; border-radius:50%;
-  background:#25D366; display:flex; align-items:center; justify-content:center;
-  box-shadow:0 12px 28px -8px rgba(37,211,102,.6);
+  background:#007BFF;
+  color: #FFFFFF; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 12px 28px -8px rgba(0, 123, 255, 0.6);
   transition:transform .25s var(--ease);
   animation: wa-appear .6s var(--ease) .6s both;
 }
-.whatsapp-float:hover{ transform:scale(1.08); }
-.whatsapp-float .icon{ width:30px; height:30px; position:relative; z-index:1; }
-.wa-ping{ position:absolute; inset:0; border-radius:50%; background:#25D366; animation: wa-ping 2.2s ease-out infinite; }
-@keyframes wa-ping{ 0%{ transform:scale(1); opacity:.55; } 100%{ transform:scale(1.9); opacity:0; } }
-@keyframes wa-appear{ from{ opacity:0; transform:translateY(20px) scale(.7); } to{ opacity:1; transform:translateY(0) scale(1); } }
-.wa-tooltip{
+.call-float:hover{ transform:scale(1.08); }
+.call-float .icon{ width:26px; height:26px; position:relative; z-index:1; }
+.call-ping{ position:absolute; inset:0; border-radius:50%; background:#007BFF; animation: call-ping 2.2s ease-out infinite; }
+@keyframes call-ping{ 0%{ transform:scale(1); opacity:.55; } 100%{ transform:scale(1.9); opacity:0; } }
+@keyframes call-appear{ from{ opacity:0; transform:translateY(20px) scale(.7); } to{ opacity:1; transform:translateY(0) scale(1); } }
+.call-tooltip{
   position:absolute; left:68px; bottom:50%; transform:translateY(50%);
   background:var(--ink); color:var(--cream); font-size:.82rem; font-weight:600;
   padding:8px 14px; border-radius:8px; white-space:nowrap; opacity:0; pointer-events:none;
   transition:opacity .25s var(--ease), transform .25s var(--ease);
 }
-.whatsapp-float:hover .wa-tooltip{ opacity:1; transform:translateY(50%) translateX(4px); }
+.call-float:hover .call-tooltip{ opacity:1; transform:translateY(50%) translateX(4px); }
 @media (max-width:680px){
-  .whatsapp-float{ left:16px; bottom:16px; width:52px; height:52px; }
-  .whatsapp-float .icon{ width:26px; height:26px; }
-  .wa-tooltip{ display:none; }
+  .call-float{ left:16px; bottom:16px; width:52px; height:52px; }
+  .call-float .icon{ width:24px; height:24px; }
+  .call-tooltip{ display:none; }
 }
 
 /* ===================== SCROLL REVEAL ===================== */
