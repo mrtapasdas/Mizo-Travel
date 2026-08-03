@@ -258,7 +258,9 @@ if (waForm){
     ];
     if (message) lines.push('*Message:* ' + message);
 
-    /* ⚠️ Replace 913890000000 with your real WhatsApp number */
+    // Fire conversion only on successful, validated submit
+gtag('event', 'conversion', { 'send_to': 'AW-10781206606/bFpzCLeMjdIcEM7Q8JQo' });
+     
     var waNumber = '919531671758';
     window.open(
       'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(lines.join('\n')),
