@@ -1172,7 +1172,6 @@ strong{ color:var(--ink); font-weight:700; }
   .hero-visual{
     flex:none;
     width:100%;
-    max-width: 100%;
     padding-top:20px;
   }
   .hero h1{ font-size:clamp(2.2rem, 1.6rem + 5vw, 3.2rem); }
