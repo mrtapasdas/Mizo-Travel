@@ -1734,7 +1734,8 @@ strong{ color:var(--ink); font-weight:700; }
    (deliberately different from the two-column Terms layout)
    ============================================================ */
 .cancel-body {
-  padding: 88px 0 108px;
+  padding-top: 88px;
+  padding-bottom: 108px;
 }
 
 /* Section wrapper */
@@ -2212,7 +2213,7 @@ strong{ color:var(--ink); font-weight:700; }
   .sb-stat{ border-right: none; border-bottom: 1px solid rgba(248,243,232,.15); padding: 16px 0; }
   .sb-stat:nth-child(3n){ border-right: none; }
   .sb-stat:last-child{ border-bottom: none; }
-   .cancel-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .cancel-hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .cancel-timeline { grid-template-columns: 1fr 1fr; gap: 24px; }
   .cancel-timeline::before { display: none; }
   .cp-steps { grid-template-columns: 1fr; gap: 16px; }
@@ -2263,7 +2264,7 @@ strong{ color:var(--ink); font-weight:700; }
   .cancel-timeline { grid-template-columns: 1fr; gap: 16px; }
   .fm-grid { grid-template-columns: 1fr; }
   .insurance-band { padding: 28px 22px; }
-  .cancel-body { padding: 56px 0 80px; }
+  .cancel-body { padding-top: 56px; padding-bottom: 80px; }
   .cp-section { padding-bottom: 48px; margin-bottom: 48px; }
 }
 
