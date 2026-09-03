@@ -201,7 +201,6 @@ if (waForm){
     var accom   = (waForm.querySelector('[name="accommodation"]:checked') || {}).value || '';
     var rooms    = document.getElementById('wa-rooms') ? document.getElementById('wa-rooms').value.trim() : '';
     var roomType = (waForm.querySelector('[name="room_type"]:checked') || {}).value || '';
-    var transp  = (waForm.querySelector('[name="transport"]:checked') || {}).value || '';
     var meal    = (waForm.querySelector('[name="meal"]:checked') || {}).value || '';
     var pickup  = (waForm.querySelector('[name="pickup"]:checked') || {}).value || '';
     var permit  = (waForm.querySelector('[name="permit"]:checked') || {}).value || '';
@@ -250,7 +249,6 @@ if (waForm){
       '*Duration:* '        + duration,
       '*Accommodation:* '   + accom,
       '*Rooms:* '           + (rooms ? rooms + ' (' + roomType + ')' : 'Not specified'),
-      '*Transport:* '       + transp,
       '*Meal Preference:* ' + meal,
       '*Pickup & Drop:* '   + pickup,
       '*Permit (ILP):* '    + permit,
