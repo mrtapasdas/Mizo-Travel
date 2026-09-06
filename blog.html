@@ -310,7 +310,6 @@
 /* ---- Responsive ---- */
 @media (max-width:1080px){
   .blog-grid{ grid-template-columns:repeat(2,1fr); }
-  .ac-wide{ grid-column:span 2; }
 }
 @media (max-width:920px){
   .blog-hero-inner{ grid-template-columns:1fr; gap:36px; }
@@ -320,9 +319,6 @@
   .blog-hero{ padding:112px 0 64px; }
   .blog-hero h1{ font-size:clamp(1.9rem,1.4rem + 4vw,2.6rem); }
   .blog-grid{ grid-template-columns:1fr; }
-  .ac-wide{ grid-column:span 1; flex-direction:column; }
-  .ac-wide .ac-thumb{ height:210px; flex:none; min-height:unset; }
-  .ac-wide .ac-title{ font-size:1.08rem; }
   .blog-controls{ flex-direction:column; align-items:stretch; }
   .srch-wrap{ max-width:100%; }
   .blog-nl{ grid-template-columns:1fr; padding:28px 22px; gap:20px; }
@@ -901,9 +897,9 @@ var POSTS = [
   }
 
   /* ---- Build one card ---- */
-  function buildCard(p, wide) {
+  function buildCard(p) {
     var art = document.createElement('article');
-    art.className = 'ac' + (wide ? ' ac-wide' : '');
+    art.className = 'ac';
     art.setAttribute('role', 'listitem');
 
     /* Thumbnail area: SVG always first, photo layered on top if available */
@@ -970,9 +966,8 @@ var POSTS = [
     }
 
     var slice = set.slice(shown, shown + PAGE);
-    slice.forEach(function (p, i) {
-      /* First card of a fresh render gets the wide layout */
-      grid.appendChild(buildCard(p, reset && i === 0));
+    slice.forEach(function (p) {
+      grid.appendChild(buildCard(p));
     });
     shown = Math.min(shown + PAGE, set.length);
 
