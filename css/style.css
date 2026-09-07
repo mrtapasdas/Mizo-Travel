@@ -114,26 +114,25 @@ strong{ color:var(--ink); font-weight:700; }
 
 /* ===================== HEADER ===================== */
 .site-header{
+  background:#ffffff;
+  box-shadow:var(--shadow-sm);
   position:fixed; top:0; left:0; right:0; z-index:200;
-  padding:18px 0; transition:background .35s var(--ease), padding .35s var(--ease), box-shadow .35s var(--ease);
+  padding:18px 0; transition:padding .35s var(--ease);
 }
 .site-header.is-scrolled{
-  background:rgba(248,243,232,.92); backdrop-filter:blur(10px);
-  box-shadow:var(--shadow-sm); padding:10px 0;
+  padding:10px 0;
 }
 .header-inner{ display:flex; align-items:center; justify-content:space-between; gap:24px; }
 
 .brand{ display:flex; align-items:center; gap:10px; }
 .brand img{ width:40px; height:40px; border-radius:50%; }
 .brand-text{ font-family:var(--font-display); font-weight:600; font-size:1.2rem; color:var(--ink); }
-.site-header:not(.is-scrolled) .brand-text{ color:var(--cream); }
 .brand-text em{ font-style:normal; color:var(--gold); }
 
 .main-nav ul{ display:flex; gap:34px; }
 .main-nav a{
-  font-weight:600; font-size:.93rem; color:var(--cream); position:relative; padding:4px 0;
+  font-weight:600; font-size:.93rem; color:var(--ink); position:relative; padding:4px 0;
 }
-.site-header.is-scrolled .main-nav a{ color:var(--ink); }
 .main-nav a::after{
   content:""; position:absolute; left:0; bottom:-4px; height:2px; width:0; background:var(--gold);
   transition:width .25s var(--ease);
@@ -143,9 +142,8 @@ strong{ color:var(--ink); font-weight:700; }
 .header-actions{ display:flex; align-items:center; gap:14px; }
 .nav-toggle{
   display:none; width:42px; height:42px; align-items:center; justify-content:center;
-  border-radius:50%; color:var(--cream); cursor:pointer;
+  border-radius:50%; color:var(--ink); cursor:pointer;
 }
-.site-header.is-scrolled .nav-toggle{ color:var(--ink); }
 
 .mobile-nav{
   position:fixed; top:0; right:0; height:100vh; width:min(86vw,360px);
