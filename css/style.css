@@ -115,13 +115,23 @@ strong{ color:var(--ink); font-weight:700; }
 /* ===================== HEADER ===================== */
 .site-header{
   background:#ffffff;
-  box-shadow:var(--shadow-sm);
+  /* Starts flat with no shadow at the top of the page */
+  box-shadow:none; 
   position:fixed; top:0; left:0; right:0; z-index:200;
-  padding:18px 0; transition:padding .35s var(--ease);
+  /* Fixed to the smaller height permanently */
+  padding:10px 0; 
+  /* Smooth animation for the shadow and background */
+  transition:background .35s var(--ease), box-shadow .35s var(--ease);
 }
+
+/* THE NEW SCROLL ANIMATION: Floats off the page */
 .site-header.is-scrolled{
-  padding:10px 0;
+  /* Slight glass effect and an elegant floating shadow */
+  background:rgba(255, 255, 255, 0.95);
+  backdrop-filter:blur(10px);
+  box-shadow: 0 6px 24px -6px rgba(20,40,28,0.15); 
 }
+
 .header-inner{ display:flex; align-items:center; justify-content:space-between; gap:24px; }
 
 .brand{ display:flex; align-items:center; gap:10px; }
