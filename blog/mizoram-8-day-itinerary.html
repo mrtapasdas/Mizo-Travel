@@ -363,11 +363,23 @@
 /* ---- Checklist ---- */
 .art-list{
   list-style:none; padding:0; margin:16px 0 22px;
-  display:flex; flex-direction:column; gap:9px;
+  display:flex; flex-direction:column; gap:12px;
+  width: 100%;
+}
+.ig-embed-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden;
+}
+
+.ig-embed-wrap iframe {
+  max-width: 100% !important;
+  width: 100% !important;
 }
 .art-list li{
   display:flex; align-items:flex-start; gap:12px;
   font-size:.95rem; color:var(--ink-soft); line-height:1.65;
+  word-break: break-word;
 }
 .art-list li::before{
   content:'';
