@@ -530,35 +530,6 @@
 }
 .itin-day-act{ font-size:.72rem; color:rgba(248,243,232,.55); line-height:1.4; }
 
-/* ---- FAQ Accordion Styles ---- */
-.faq-list{
-  display:flex; flex-direction:column; gap:12px;
-}
-.faq-item{
-  border:1px solid var(--line); border-radius:var(--radius-sm);
-  background:var(--cream-soft); overflow:hidden;
-}
-.faq-q{
-  width:100%; display:flex; align-items:center; justify-content:space-between;
-  padding:18px 20px; background:none; border:none; cursor:pointer;
-  font-family:var(--font-display); font-size:1rem; font-weight:600; color:var(--ink);
-  text-align:left; gap:16px;
-}
-.faq-q svg{
-  width:18px; height:18px; flex-shrink:0; transition:transform .3s var(--ease);
-  color:var(--forest);
-}
-.faq-q[aria-expanded="true"] svg{
-  transform:rotate(45deg);
-}
-.faq-a{
-  max-height:0; overflow:hidden; transition:max-height .35s ease;
-  padding:0 20px; font-size:.92rem; color:var(--ink-soft); line-height:1.7;
-}
-.faq-q[aria-expanded="true"] + .faq-a{
-  padding-bottom:20px;
-}
-
 /* ---- Article-end CTA ---- */
 .art-cta{
   background:linear-gradient(135deg, var(--forest-dark), var(--maroon-dark));
@@ -1477,7 +1448,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">
               Do I need to book flights to Aizawl separately?
-              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              <svg class="icon" <use href="#ic-plus"/></svg>
             </button>
             <div class="faq-a"><p>Yes — flights are not included in the package. Lengpui Airport (Aizawl) has regular flights from Kolkata, Guwahati, and Imphal. We recommend arriving by 12pm on Day 1 to make the most of the evening. We can also arrange overland pickup from Silchar or Guwahati if you prefer the scenic route in.</p></div>
           </div>
