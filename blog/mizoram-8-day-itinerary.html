@@ -530,6 +530,35 @@
 }
 .itin-day-act{ font-size:.72rem; color:rgba(248,243,232,.55); line-height:1.4; }
 
+/* ---- FAQ Accordion Styles ---- */
+.faq-list{
+  display:flex; flex-direction:column; gap:12px;
+}
+.faq-item{
+  border:1px solid var(--line); border-radius:var(--radius-sm);
+  background:var(--cream-soft); overflow:hidden;
+}
+.faq-q{
+  width:100%; display:flex; align-items:center; justify-content:space-between;
+  padding:18px 20px; background:none; border:none; cursor:pointer;
+  font-family:var(--font-display); font-size:1rem; font-weight:600; color:var(--ink);
+  text-align:left; gap:16px;
+}
+.faq-q svg{
+  width:18px; height:18px; flex-shrink:0; transition:transform .3s var(--ease);
+  color:var(--forest);
+}
+.faq-q[aria-expanded="true"] svg{
+  transform:rotate(45deg);
+}
+.faq-a{
+  max-height:0; overflow:hidden; transition:max-height .35s ease;
+  padding:0 20px; font-size:.92rem; color:var(--ink-soft); line-height:1.7;
+}
+.faq-q[aria-expanded="true"] + .faq-a{
+  padding-bottom:20px;
+}
+
 /* ---- Article-end CTA ---- */
 .art-cta{
   background:linear-gradient(135deg, var(--forest-dark), var(--maroon-dark));
