@@ -397,12 +397,16 @@
 .ig-embed-wrap {
   width: 100% !important;
   max-width: 100% !important;
+  height: auto !important;
+  min-height: unset !important;
   overflow: hidden;
 }
 
 .ig-embed-wrap iframe {
   max-width: 100% !important;
   width: 100% !important;
+  height: 480px !important; /* Adjust this value if needed to perfectly fit the widget */
+  margin-bottom: -15px; /* Pulls up any trailing whitespace injected by the script */
 }
 
 /* ---- Day card — the signature element of this page ---- */
@@ -580,6 +584,7 @@
   color: var(--ink-soft);
   font-size: .95rem;
   line-height: 1.7;
+  max-width: none;
 }
 
 /* ---- Article-end CTA ---- */
@@ -972,7 +977,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p class="day-subtitle">Your first evening in the capital is deliberately slow. Aizawl deserves more than a rushed arrival and an early bed — there's a particular quality to the light here at dusk that no photo has ever quite captured.</p>
                 <span class="day-route">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
-                  Lengpui Airport / Sairang Station → Aizawl
+                  Airport / Station → Aizawl
                 </span>
               </div>
               <span class="day-num" aria-hidden="true">01</span>
@@ -1018,7 +1023,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p class="day-subtitle">The 193-km drive from Aizawl to Champhai takes 6–7 hours and passes through some of the most extraordinary terraced landscapes in Northeast India, including a tranquil mid-journey stop at Tam Dil lake.</p>
                 <span class="day-route">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
-                  Aizawl → Champhai (193 km, 6–7 hrs)
+                  Aizawl → Champhai
                 </span>
               </div>
               <span class="day-num" aria-hidden="true">02</span>
@@ -1063,7 +1068,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p class="day-subtitle">A drive from Champhai to the India-Myanmar border town of Zokhawthar, followed by a cross-border visit to the culturally significant, heart-shaped Rih Dil lake in Myanmar, before returning to Aizawl.</p>
                 <span class="day-route">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
-                  Champhai → Zokhawthar (Drive: ~260 km total)
+                  Champhai → Zokhawthar
                 </span>
               </div>
               <span class="day-num" aria-hidden="true">03</span>
@@ -1107,7 +1112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p class="day-subtitle">Reiek is 30 km from Aizawl and 20 minutes from the road. The trek itself takes three hours. The traditional village at the top is one of the few in Mizoram that's been properly reconstructed with real craftspeople involved.</p>
                 <span class="day-route">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
-                  Aizawl → Reiek Tlang → Aizawl (60 km)
+                  Aizawl → Reiek Tlang → Aizawl
                 </span>
               </div>
               <span class="day-num" aria-hidden="true">04</span>
@@ -1155,7 +1160,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p class="day-subtitle">A stunning southward drive from Aizawl covering the cultural Falkawn village, the Tropic of Cancer, dramatic viewpoints, and the rolling green hills of Sialsuk, ending in the peaceful town of Thenzawl.</p>
                 <span class="day-route">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
-                  Aizawl → Hmuifang → Thenzawl (~95 km)
+                  Aizawl → Hmuifang → Thenzawl
                 </span>
               </div>
               <span class="day-num" aria-hidden="true">05</span>
@@ -1200,7 +1205,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p class="day-subtitle">Spend the day discovering Thenzawl’s natural and recreational highlights—from the towering Vantawng Falls and unique Tuirihau cascade to the rolling greens of the local Golf Course—before heading back to the capital.</p>
                 <span class="day-route">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
-                  Thenzawl → Return to Aizawl (~110 km)
+                  Thenzawl → Return to Aizawl
                 </span>
               </div>
               <span class="day-num" aria-hidden="true">06</span>
@@ -1292,7 +1297,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p class="day-subtitle">Enjoy a final, relaxed morning in the capital city before taking the scenic 30-km drive down to Lengpui Airport, carrying unforgettable memories of Mizoram's rolling hills and warm hospitality.</p>
                 <span class="day-route">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
-                  Aizawl → Lengpui Airport / Sairang Station
+                  Aizawl → Airport / Station
                 </span>
               </div>
               <span class="day-num" aria-hidden="true">08</span>
