@@ -1747,24 +1747,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
-/* ---- FAQ Accordion ---- */
-document.querySelectorAll('.faq-q').forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    var panel = btn.nextElementSibling;
-    var isOpen = btn.getAttribute('aria-expanded') === 'true';
-
-    document.querySelectorAll('.faq-q').forEach(function (b) {
-      b.setAttribute('aria-expanded', 'false');
-      if (b.nextElementSibling) b.nextElementSibling.style.maxHeight = null;
-    });
-
-    if (!isOpen && panel) {
-      btn.setAttribute('aria-expanded', 'true');
-      panel.style.maxHeight = panel.scrollHeight + 'px';
-    }
-  });
-});
-
   /* ---- Newsletter ---- */
   var fnlForm = document.getElementById('footer-newsletter-form');
   if (fnlForm) {
