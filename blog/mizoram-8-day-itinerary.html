@@ -1450,7 +1450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="faq-list" style="margin-top:8px;">
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
+            <button type="button" class="faq-q" aria-expanded="false">
               How much does this 8-day Mizoram tour cost?
               <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
             </button>
@@ -1458,7 +1458,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
+            <button type="button" class="faq-q" aria-expanded="false">
               What is the best time for this 8-day tour?
               <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
             </button>
@@ -1466,7 +1466,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
+            <button type="button" class="faq-q" aria-expanded="false">
               Is Mizoram safe for solo or female travelers?
               <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
             </button>
@@ -1474,7 +1474,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
+            <button type="button" class="faq-q" aria-expanded="false">
               How do I reach Aizawl by train via Sairang?
               <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
             </button>
@@ -1482,7 +1482,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
+            <button type="button" class="faq-q" aria-expanded="false">
               Can Indians visit Rih Dil without a Myanmar visa?
               <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
             </button>
@@ -1490,7 +1490,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
+            <button type="button" class="faq-q" aria-expanded="false">
               Can I customise the itinerary?
               <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
             </button>
@@ -1498,7 +1498,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">
+            <button type="button" class="faq-q" aria-expanded="false">
               Do I need to book flights to Aizawl separately?
               <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
             </button>
@@ -1678,7 +1678,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="../js/script.js"></script>
 <script>
-(function () {
+;(function () { // <-- Added protective semicolon here
   'use strict';
 
   /* ---- Reading progress bar ---- */
@@ -1747,23 +1747,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
-/* ---- FAQ Accordion ---- */
-document.querySelectorAll('.faq-q').forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    var panel = btn.nextElementSibling;
-    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+  /* ---- FAQ Accordion ---- */
+  document.querySelectorAll('.faq-q').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault(); // Prevents jump or silent page refresh
 
-    document.querySelectorAll('.faq-q').forEach(function (b) {
-      b.setAttribute('aria-expanded', 'false');
-      if (b.nextElementSibling) b.nextElementSibling.style.maxHeight = null;
+      var panel = this.nextElementSibling;
+      var isOpen = this.getAttribute('aria-expanded') === 'true';
+
+      // Close all other panels
+      document.querySelectorAll('.faq-q').forEach(function (b) {
+        b.setAttribute('aria-expanded', 'false');
+        if (b.nextElementSibling) {
+            b.nextElementSibling.style.maxHeight = null;
+        }
+      });
+
+      // Open if it wasn't already open
+      if (!isOpen && panel) {
+        this.setAttribute('aria-expanded', 'true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
     });
-
-    if (!isOpen && panel) {
-      btn.setAttribute('aria-expanded', 'true');
-      panel.style.maxHeight = panel.scrollHeight + 'px';
-    }
   });
-});
 
   /* ---- Newsletter ---- */
   var fnlForm = document.getElementById('footer-newsletter-form');
