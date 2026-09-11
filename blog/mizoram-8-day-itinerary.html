@@ -1747,25 +1747,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
-  /* ---- Robust FAQ Accordion (Event Delegation) ---- */
-document.addEventListener('click', function (e) {
-  var btn = e.target.closest('.faq-q');
-  if (!btn) return;
+/* ---- FAQ Accordion ---- */
+document.querySelectorAll('.faq-q').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var panel = btn.nextElementSibling;
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
 
-  var panel = btn.nextElementSibling;
-  var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.faq-q').forEach(function (b) {
+      b.setAttribute('aria-expanded', 'false');
+      if (b.nextElementSibling) b.nextElementSibling.style.maxHeight = null;
+    });
 
-  // Close all other open FAQs
-  document.querySelectorAll('.faq-q').forEach(function (b) {
-    b.setAttribute('aria-expanded', 'false');
-    if (b.nextElementSibling) b.nextElementSibling.style.maxHeight = null;
+    if (!isOpen && panel) {
+      btn.setAttribute('aria-expanded', 'true');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
   });
-
-  // Toggle the clicked FAQ
-  if (!isOpen && panel) {
-    btn.setAttribute('aria-expanded', 'true');
-    panel.style.maxHeight = panel.scrollHeight + 'px';
-  }
 });
 
   /* ---- Newsletter ---- */
