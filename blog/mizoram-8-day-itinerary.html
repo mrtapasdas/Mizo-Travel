@@ -530,57 +530,19 @@
 }
 .itin-day-act{ font-size:.72rem; color:rgba(248,243,232,.55); line-height:1.4; }
 
-/* ---- FAQ Accordion Styles ---- */
-.faq-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* ===================== FAQ ===================== */
+.faq-grid{ display:grid; grid-template-columns:.8fr 1.2fr; gap:60px; align-items:start; }
+.faq-grid h2{ margin:10px 0 14px; }
+.faq-item{ border-bottom:1px solid var(--line); }
+.faq-q{
+  width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:22px 4px; text-align:left; font-family:var(--font-display); font-size:1.08rem; font-weight:600;
+  color:var(--ink); cursor:pointer;
 }
-.faq-item {
-  background: var(--cream-soft);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-}
-.faq-q {
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 18px 20px;
-  text-align: left;
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--ink);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  gap: 16px;
-}
-.faq-q svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-  color: var(--forest);
-}
-.faq-q[aria-expanded="true"] svg {
-  transform: rotate(45deg);
-}
-.faq-a {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
-                          /* no padding here */
-}
-.faq-a p {
-  padding: 0 20px 18px;   /* ← padding moved here */
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: .95rem;
-  line-height: 1.7;
-}
+.faq-q .icon{ color:var(--gold-deep); transition:transform .3s var(--ease); flex-shrink:0; }
+.faq-q[aria-expanded="true"] .icon{ transform:rotate(45deg); }
+.faq-a{ max-height:0; overflow:hidden; transition:max-height .35s var(--ease); }
+.faq-a p{ padding:0 4px 22px; font-size:.96rem; max-width:560px; }
 
 /* ---- Article-end CTA ---- */
 .art-cta{
@@ -1445,14 +1407,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </section>
 
       <!-- ===== FAQ ===== -->
-      <section id="faq-art" aria-labelledby="h-faq">
+      <section class="section faq" id="faq">
         <h2 id="h-faq">Frequently asked questions</h2>
-        <div class="faq-list" style="margin-top:8px;">
+        <div class="faq-list reveal">
 
           <div class="faq-item">
-            <button type="button" class="faq-q" aria-expanded="false">
+            <button class="faq-q" aria-expanded="false">
               How much does this 8-day Mizoram tour cost?
-              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              <svg class="icon"><use href="#ic-plus"/></svg>
             </button>
             <div class="faq-a"><p>The Highlands Discovery package starts at ₹22,999 per person for a group of 4. This includes 3-star hotels or homestays, private car, daily breakfast, all entry fees, local guide, and ILP assistance. Solo or smaller groups are priced higher per head — contact us for an exact quote for your group size.</p></div>
           </div>
@@ -1747,25 +1709,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
-  /* ---- FAQ Accordion ---- */
-  document.querySelectorAll('.faq-q').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault(); // Prevents jump or silent page refresh
-
-      var panel = this.nextElementSibling;
-      var isOpen = this.getAttribute('aria-expanded') === 'true';
-
-      // Close all other panels
-      document.querySelectorAll('.faq-q').forEach(function (b) {
-        b.setAttribute('aria-expanded', 'false');
-        if (b.nextElementSibling) {
-            b.nextElementSibling.style.maxHeight = null;
-        }
+/* ---------- FAQ accordion ---------- */
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item){
+    var btn = item.querySelector('.faq-q');
+    var panel = item.querySelector('.faq-a');
+    btn.addEventListener('click', function(){
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      faqItems.forEach(function(other){
+        other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+        other.querySelector('.faq-a').style.maxHeight = null;
       });
-
-      // Open if it wasn't already open
-      if (!isOpen && panel) {
-        this.setAttribute('aria-expanded', 'true');
+      if (!isOpen){
+        btn.setAttribute('aria-expanded','true');
         panel.style.maxHeight = panel.scrollHeight + 'px';
       }
     });
