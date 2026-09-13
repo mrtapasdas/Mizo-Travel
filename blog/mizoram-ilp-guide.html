@@ -1586,25 +1586,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
-  /* ---- FAQ accordion ---- */
-  document.querySelectorAll('.faq-q').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var expanded = btn.getAttribute('aria-expanded') === 'true';
-      // Close all
-      document.querySelectorAll('.faq-q').forEach(function (b) {
-        b.setAttribute('aria-expanded', 'false');
-        var panel = b.nextElementSibling;
-        if (panel) panel.style.maxHeight = null;
-      });
-      // Open clicked if it was closed
-      if (!expanded) {
-        btn.setAttribute('aria-expanded', 'true');
-        var panel = btn.nextElementSibling;
-        if (panel) panel.style.maxHeight = panel.scrollHeight + 'px';
-      }
-    });
-  });
-
   /* ---- Footer year ---- */
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
