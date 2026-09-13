@@ -359,6 +359,99 @@
   border: 1.5px solid var(--forest);
 }
 
+/* ---- Inline article images ---- */
+.art-img{
+  margin:32px 0; border-radius:var(--radius); overflow:hidden;
+  position:relative; background:var(--forest-dark);
+}
+.art-img-svg{
+  width:100%; display:block;
+}
+.art-img img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; display:block;
+  opacity:0; transition:opacity .45s ease;
+}
+.art-img img.loaded{ opacity:1; }
+.art-img figcaption{
+  padding:10px 16px;
+  font-size:.78rem; color:var(--ink-soft); line-height:1.5;
+  background:var(--cream-soft); border-top:1px solid var(--line);
+  font-style:italic;
+}
+  
+/* ---- Sponsor hook CTA ---- */
+.sponsor-hook{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:0; margin:32px 0;
+  background:linear-gradient(135deg, var(--forest-dark) 0%, #0f2b1c 60%, var(--maroon-dark) 100%);
+  border-radius:var(--radius); overflow:hidden;
+  border:1px solid rgba(200,135,46,.2);
+}
+.sponsor-hook-left{
+  padding:32px 28px;
+  border-right:1px solid rgba(248,243,232,.1);
+}
+.sponsor-hook-eyebrow{
+  display:inline-block;
+  font-size:.66rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--gold-light); margin-bottom:10px;
+}
+.sponsor-hook h3{
+  font-size:1.2rem; font-weight:600; color:var(--cream);
+  margin:0 0 10px; line-height:1.3;
+}
+.sponsor-hook p{
+  font-size:.88rem; color:rgba(248,243,232,.7); line-height:1.7; margin:0 0 16px;
+}
+.sponsor-hook-list{
+  list-style:none; padding:0; margin:0;
+  display:flex; flex-direction:column; gap:10px;
+}
+.sponsor-hook-list li{
+  display:flex; align-items:flex-start; gap:10px;
+  font-size:.86rem; color:rgba(248,243,232,.8); line-height:1.5;
+}
+.sponsor-hook-list li svg{
+  width:15px; height:15px; flex-shrink:0; margin-top:2px;
+  color:var(--gold-light);
+}
+.sponsor-hook-right{
+  padding:32px 28px;
+  display:flex; flex-direction:column; justify-content:center; gap:14px;
+}
+.sponsor-hook-label{
+  font-size:.78rem; font-weight:700; color:rgba(248,243,232,.55);
+  text-transform:uppercase; letter-spacing:.06em; margin:0;
+}
+.sponsor-wa-btn{
+  display:inline-flex; align-items:center; gap:10px;
+  background:#25D366; color:#fff;
+  font-size:.92rem; font-weight:700;
+  padding:14px 22px; border-radius:999px;
+  text-decoration:none; transition:background .22s, transform .22s;
+  width:100%; justify-content:center; box-sizing:border-box;
+}
+.sponsor-wa-btn:hover{ background:#1faf55; transform:translateY(-2px); color:#fff; }
+.sponsor-pkg-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  background:rgba(248,243,232,.1); color:var(--cream);
+  border:1px solid rgba(248,243,232,.2);
+  font-size:.88rem; font-weight:700;
+  padding:12px 22px; border-radius:999px;
+  text-decoration:none; transition:background .22s;
+  width:100%; box-sizing:border-box;
+}
+.sponsor-pkg-btn:hover{ background:rgba(248,243,232,.18); color:var(--cream); }
+.sponsor-hook-note{
+  font-size:.74rem; color:rgba(248,243,232,.4);
+  text-align:center; margin:0;
+}
+@media (max-width:780px){
+  .sponsor-hook{ grid-template-columns:1fr; }
+  .sponsor-hook-left{ border-right:none; border-bottom:1px solid rgba(248,243,232,.1); }
+}
+
 /* ---- Step card — unique to this page ---- */
 .step-flow{
   display:flex; flex-direction:column; gap:0;
@@ -718,10 +811,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <aside class="art-toc" aria-label="Table of contents">
       <p class="art-toc-title">In this guide</p>
       <ol>
-        <li><a href="#what-is-ilp"       class="toc-link">What is the ILP?</a></li>
+        <li><a href="#what-is-ilp"        class="toc-link">What is the ILP?</a></li>
         <li><a href="#who-needs"          class="toc-link">Who needs one?</a></li>
         <li><a href="#ilp-types"          class="toc-link">Types &amp; fees</a></li>
         <li><a href="#documents"          class="toc-link">Documents needed</a></li>
+        <li><a href="#sponsor"            class="toc-link">The sponsor requirement</a></li>
         <li><a href="#apply-online"       class="toc-link">Apply online (step-by-step)</a></li>
         <li><a href="#apply-offline"      class="toc-link">Apply offline</a></li>
         <li><a href="#checkpoints"        class="toc-link">Where it's checked</a></li>
@@ -754,7 +848,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Mizoram is one of four states in Northeast India — along with Arunachal Pradesh, Nagaland, and Manipur — that currently enforces the ILP system. Think of it less as a bureaucratic hurdle and more as a measure that has helped Mizoram remain one of the safest, least-commercialised, and most culturally intact destinations in the country. The permit directly protects the communities you will be visiting.</p>
 
         <div class="art-note">
-          <p><strong>Quick fact:</strong> As a Mizoram-based tour operator, Mizo Travel handles ILP assistance for all guests on our packages. You share your ID details, we do the paperwork — usually completed 7 to 10 days before your arrival. That said, solo travellers can absolutely apply themselves; this guide shows you exactly how.</p>
+          <p><strong>Quick fact:</strong> As a Mizoram-based tour operator, Mizo Travel handles ILP assistance for all guests on our <a href="../index.html#packages">tour packages</a>. You share your ID details, we do the paperwork — usually completed 7 to 10 days before your arrival. That said, solo travellers can absolutely apply themselves; this guide shows you exactly how.</p>
         </div>
       </section>
 
@@ -853,6 +947,85 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </section>
 
+      <!-- ===== SPONSOR HURDLE ===== -->
+<section id="sponsor" aria-labelledby="h-sponsor">
+  <h2 id="h-sponsor">The sponsor requirement — and how to solve it</h2>
+  <p>Here is the part most travel blogs skip entirely. Every Mizoram ILP application — online or offline — requires a <strong>local sponsor</strong>: a permanent Mizoram resident who holds a valid <strong>EPIC (Electoral Photo Identity Card, i.e. Mizoram Voter ID)</strong>. The sponsor's name, voter ID number, and address must be entered on your application form. Without a valid sponsor, your application will be rejected outright.</p>
+  <p>This is the single biggest reason first-time applicants get stuck. You cannot use a friend's Aadhaar from another state, a hotel booking confirmation, or a business contact outside Mizoram. The sponsor must be a <em>registered Mizoram voter</em> — and most travellers simply do not know one.</p>
+
+  <h3>What the sponsor actually does</h3>
+  <p>The sponsor is not a chaperone — they do not need to accompany you or meet you in person. Their role is purely documentary: they vouch for your purpose of visit and take on formal responsibility for your conduct inside the state. In practice, this means you supply their voter ID details on the form, and that is the end of their involvement. Many tour operators in Mizoram act as professional sponsors for the guests they serve.</p>
+
+  <div class="art-warn">
+    <p><strong>Never use a random name you find online.</strong> Some forums circulate "generic sponsor IDs" for ILP applications. Using a fabricated or unauthorised sponsor is document fraud under the Bengal Eastern Frontier Regulation — it can result in your permit being revoked at the border and a permanent travel ban from the state. Use only a legitimate sponsor who has explicitly consented.</p>
+  </div>
+
+  <h3>Your three options for finding a Mizoram sponsor</h3>
+
+  <div class="art-table-wrap">
+    <table class="art-table">
+      <thead><tr><th>Option</th><th>How it works</th><th>Best for</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="td-em">Book through a local tour operator</td>
+          <td>Your operator acts as sponsor — they provide their EPIC details and handle the full ILP application on your behalf.</td>
+          <td>Most travellers — easiest, zero paperwork on your end</td>
+        </tr>
+        <tr>
+          <td class="td-em">Personal contact in Mizoram</td>
+          <td>A friend, colleague, or relative who is a permanent resident with Mizoram Voter ID can sponsor you directly.</td>
+          <td>Travellers visiting family or with established local contacts</td>
+        </tr>
+        <tr>
+          <td class="td-em">Mizoram House liaison officer</td>
+          <td>The liaison officer at a Mizoram House (Kolkata, Delhi, Guwahati, Silchar, Shillong, Mumbai) can act as sponsor for walk-in offline applications.</td>
+          <td>Those applying offline who have no other sponsor</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Sponsor CTA / Lead capture -->
+  <div class="sponsor-hook" role="region" aria-label="Sponsorship and ILP assistance">
+    <div class="sponsor-hook-left">
+      <span class="sponsor-hook-eyebrow">Mizo Travel ILP Sponsorship</span>
+      <h3>No sponsor? We've got you covered.</h3>
+      <p>When you book any Mizo Travel tour package, we act as your official Mizoram sponsor — providing our EPIC details, filing your complete ILP application, and delivering the approved permit to your inbox at least 7 days before your arrival. Zero forms, zero follow-up, zero stress.</p>
+      <ul class="sponsor-hook-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>
+          Legitimate local EPIC sponsorship included in every package
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>
+          Application filed and tracked — you just share your ID details
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>
+          Approved permit sent to your email 7+ days before travel
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>
+          Group applications handled in one submission — no individual forms
+        </li>
+      </ul>
+    </div>
+    <div class="sponsor-hook-right">
+      <p class="sponsor-hook-label">Send your dates — get a quote &amp; ILP sorted in 24 hrs</p>
+      <a href="https://wa.me/919531671758?text=Hi%20Mizo%20Travel!%20I%20need%20ILP%20sponsorship%20and%20want%20to%20book%20a%20tour.%20Please%20send%20me%20a%20quote."
+         target="_blank" rel="noopener noreferrer" class="sponsor-wa-btn">
+        <svg width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4C9.4 4 4 9.4 4 16c0 2.4.7 4.7 2 6.6L4.4 28l5.6-1.5c1.8 1 3.8 1.5 6 1.5 6.6 0 12-5.4 12-12S22.6 4 16 4z" fill="rgba(255,255,255,.3)"/><path d="M22.4 19c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-1.7-.8-2.8-1.5-3.9-3.3-.3-.5.3-.5.8-1.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1.1-1.1 2.6 0 1.5 1.1 3 1.3 3.2.2.2 2.1 3.3 5.2 4.5 2.6 1 3.1.8 3.7.7.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4z" fill="currentColor"/></svg>
+        WhatsApp Us Your Dates
+      </a>
+      <a href="../index.html#packages" class="sponsor-pkg-btn">
+        Browse tour packages
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <p class="sponsor-hook-note">ILP sponsorship is included in all packages — no additional charge.</p>
+    </div>
+  </div>
+</section>
+
       <!-- ===== APPLY ONLINE ===== -->
       <section id="apply-online" aria-labelledby="h-apply-online">
         <h2 id="h-apply-online">How to apply for the Mizoram ILP online (step-by-step)</h2>
@@ -864,7 +1037,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="step-num" aria-hidden="true">1</div>
             <div class="step-content">
               <h4>Open the official ILP portal</h4>
-              <p>Navigate to <strong>ilp.mizoram.gov.in</strong> on any browser. This is the only official Mizoram government portal for ILP applications. Ignore third-party sites charging service fees — the permit itself has a nominal government fee and does not require an agent.</p>
+              <p>Navigate to <a href="https://ilp.mizoram.gov.in/" target="_blank" rel="noopener noreferrer"><strong>ilp.mizoram.gov.in</strong></a> on any browser. This is the only official Mizoram government portal for ILP applications. Ignore third-party sites charging service fees — the permit itself has a nominal government fee and does not require an agent.</p>
             </div>
           </div>
 
@@ -945,6 +1118,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><strong>Silchar</strong> — Mizoram House (closest to the road border at Vairengte)</li>
           <li><strong>Shillong</strong> — Mizoram House (useful for Meghalaya connections)</li>
           <li><strong>Mumbai</strong> — Mizoram House, Bandra</li>
+          <p style="margin-top:14px; font-size:.88rem; color:var(--ink-soft);">For the latest office addresses and hours, check the <a href="https://tourism.mizoram.gov.in/" target="_blank" rel="noopener noreferrer">official Mizoram Tourism website</a> or call the nearest Mizoram House directly before visiting.</p>
         </ul>
 
         <h3>On-arrival counters (limited, not recommended)</h3>
@@ -1002,19 +1176,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- ===== EXTENDING ===== -->
       <section id="extend" aria-labelledby="h-extend">
-        <h2 id="h-extend">Extending your Mizoram ILP inside the state</h2>
-        <p>If your trip runs longer than planned, a Temporary ILP (15 days) can be extended once for an additional 15 days — giving you up to 30 days total. Extensions are processed at the <strong>Deputy Commissioner's (DC) office</strong> in the district where you are currently staying.</p>
+  <h2 id="h-extend">How to extend your Mizoram ILP inside the state</h2>
+  <p>A Temporary ILP (15 days) can be renewed <strong>once</strong> for an additional 15 days, giving you a maximum of 30 consecutive days in Mizoram on a single tourist permit. Renewals are processed at the <strong>Deputy Commissioner's (DC) office</strong> in the district where you are currently staying — not online, and not at the original issuing authority.</p>
 
-        <p>What you need for an extension:</p>
-        <ul class="art-list">
-          <li><strong>Your original ILP</strong> — The printed permit issued when you entered</li>
-          <li><strong>One passport-size photograph</strong> — Same specifications as the original application</li>
-          <li><strong>Photocopy of your government ID</strong> — Aadhaar or the same ID used for the original ILP</li>
-          <li><strong>Extension fee</strong> — ₹20 (paid at the DC office cashier counter)</li>
-        </ul>
+  <div class="art-note">
+    <p><strong>Apply before expiry, not after.</strong> There is no grace period on an expired Mizoram ILP. If your permit lapses while you are still in the state, you are technically in violation and subject to a fine at the next checkpoint. Visit the DC office with at least 2–3 days remaining on your current permit.</p>
+  </div>
 
-        <p>Extensions are almost always processed the same day, often within a couple of hours. Visit the DC office as early in the morning as possible. The DC offices in <strong>Aizawl</strong> and <strong>Champhai</strong> are the most visited by tourists; our guides can accompany you if needed. Do not let your permit expire before applying for the extension — there is no grace period.</p>
-      </section>
+  <h3>Documents required for ILP renewal</h3>
+  <ul class="art-list">
+    <li><strong>Original ILP</strong> — The printed permit you received on entry; the DC office will annotate it directly</li>
+    <li><strong>One passport-size photograph</strong> — Same specifications as your original application</li>
+    <li><strong>Photocopy of your government ID</strong> — Aadhaar, voter ID, or passport — same document used for the original permit</li>
+    <li><strong>Renewal fee of ₹20</strong> — Cash only at the DC office cashier; UPI is not always available at district offices</li>
+    <li><strong>Your sponsor's details</strong> — In some districts, the DC office may ask you to reconfirm your local sponsor's EPIC number; having this ready speeds things up</li>
+  </ul>
+
+  <h3>DC offices most used by tourists</h3>
+
+  <div class="art-table-wrap">
+    <table class="art-table">
+      <thead><tr><th>District</th><th>DC Office location</th><th>Approx. processing time</th><th>Best visiting hour</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="td-em">Aizawl</td>
+          <td>Deputy Commissioner Office, Aizawl (near State Secretariat)</td>
+          <td>Same day, 1–2 hrs</td>
+          <td>9:00–11:00 AM</td>
+        </tr>
+        <tr>
+          <td class="td-em">Champhai</td>
+          <td>DC Office, Champhai town centre</td>
+          <td>Same day, 2–3 hrs</td>
+          <td>9:00–10:30 AM</td>
+        </tr>
+        <tr>
+          <td class="td-em">Serchhip</td>
+          <td>DC Office, Serchhip</td>
+          <td>Same day</td>
+          <td>9:00–11:00 AM</td>
+        </tr>
+        <tr>
+          <td class="td-em">Lunglei</td>
+          <td>DC Office, Lunglei</td>
+          <td>Same day</td>
+          <td>9:00–11:00 AM</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>What if you need more than 30 days?</h3>
+  <p>If your stay genuinely exceeds 30 days — for research, extended family visits, or long-term project work — you will need to exit Mizoram and re-enter with a fresh Temporary ILP, or apply for a <strong>Regular ILP</strong> (valid 6 months, renewable twice). Regular ILPs require stronger justification (a formal letter from your institution or employer) and are issued by the Home Department of the Government of Mizoram rather than through the standard online portal. Contact us or the <a href="https://home.mizoram.gov.in/" target="_blank" rel="noopener noreferrer">Mizoram Home Department</a> directly for Regular ILP guidance.</p>
+
+  <div class="art-warn">
+    <p><strong>DC offices are closed on Sundays and government holidays.</strong> Mizoram observes a strict Sunday shutdown — all government offices, including DC offices, are completely closed from Saturday evening through Monday morning. If your permit is due to expire over a weekend, visit the DC office on the preceding Friday morning without fail.</p>
+  </div>
+</section>
 
       <!-- ===== FOREIGN NATIONALS ===== -->
       <section id="foreign-pap" aria-labelledby="h-foreign-pap">
@@ -1057,7 +1275,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><strong>Applying the day before travel.</strong> Online processing typically takes 24–48 hours on working days. Apply at least 7 days before you travel. If you apply on a Friday and the government office has a holiday on Monday, you may not receive approval until Tuesday — which could delay your entire trip.</li>
           <li><strong>Wrong entry dates on the application.</strong> Your ILP is valid only for the travel window you specify. If you enter the state one day before the listed start date, your permit is invalid. Double-check your arrival date and build in one extra day as a buffer if your transit connections are tight.</li>
           <li><strong>Not listing all co-travellers.</strong> Every person in your group — including children — must be listed on the ILP. If you add a travel companion after submitting, you need a new application covering them. One permit does not cover unnamed travellers.</li>
-          <li><strong>Not printing copies before leaving Aizawl.</strong> Internet connectivity drops significantly once you leave the city, particularly on the route to Champhai and Zokhawthar. Print copies in Aizawl — before departing for any eastern or southern circuit.</li>
+          <li><strong>Not printing copies before leaving Aizawl.</strong> Internet connectivity drops significantly once you leave the city, particularly on the route to Champhai and Zokhawthar. Print copies in Aizawl — before departing for any eastern or southern circuit. If you're heading to Champhai or Zokhawthar, our <a href="mizoram-8-day-itinerary.html">8-day Mizoram itinerary guide</a> covers exactly what to expect on that route.</li>
           <li><strong>Letting the permit expire mid-trip without extending.</strong> There is no grace period. If your 15-day permit expires while you are still in Mizoram, visit the nearest DC office immediately. Do not wait until a checkpoint catches it.</li>
           <li><strong>Using unofficial third-party sites.</strong> Several websites charge ₹500–₹2,000 in "service fees" to submit a form that takes 10 minutes on the official government portal for ₹120. The official portal is <a href="https://ilp.mizoram.gov.in/" target="_blank" rel="noopener noreferrer">ilp.mizoram.gov.in</a> — use it directly.</li>
         </ul>
@@ -1105,7 +1323,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               Do foreign nationals need a different permit?
               <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
             </button>
-            <div class="faq-a"><p>Yes. Foreign nationals need a Protected Area Permit (PAP), not an ILP. Since December 2024, the PAP for Mizoram must be obtained in advance through the e-FRRO portal or via a registered Indian travel operator — it can no longer be obtained on arrival. The PAP typically takes 2 to 4 weeks to process, so international visitors should begin the application well before their planned India travel dates. Mizo Travel assists all international guests with PAP applications as part of our tour packages.</p></div>
+            <div class="faq-a"><p>Yes. Foreign nationals need a Protected Area Permit (PAP), not an ILP. Since December 2024, the PAP for Mizoram must be obtained in advance through the e-FRRO portal or via a registered Indian travel operator — it can no longer be obtained on arrival. The PAP typically takes 2 to 4 weeks to process, so international visitors should begin the application well before their planned India travel dates. <a href="../index.html#contact">Mizo Travel</a> assists all international guests with PAP applications as part of our <a href="../index.html#packages">tour packages</a>.</p></div>
           </div>
 
           <div class="faq-item">
